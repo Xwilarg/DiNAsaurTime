@@ -22,11 +22,11 @@ namespace GamedevGBG
             if (_dragTarget != null) // TODO: Improve drag & drop
             {
                 _lastFramePos = _dragTarget.position;
-                Vector3 mouseWorld = _camera.ScreenToWorldPoint(new Vector3(_mousePos.x, _mousePos.y, 8f));
+                Vector3 mouseWorld = _camera.ScreenToWorldPoint(new Vector3(_mousePos.x, _mousePos.y, 1.5f));
                 _dragTarget.transform.position = new Vector3(
                     x: mouseWorld.x + _offset.x,
                     y: mouseWorld.y + _offset.y,
-                    z: -2f
+                    z: -10.1f
                 );
             }
         }
