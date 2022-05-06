@@ -45,7 +45,6 @@ namespace GamedevGBG
                 {
                     _dragTarget = hit.collider.transform;
                     _dragTarget.GetComponent<Rigidbody>().isKinematic = true;
-                    _dragTarget.transform.rotation = Quaternion.identity;
                     _offset = _dragTarget.transform.position - hit.point;
                 }
             }
