@@ -10,6 +10,7 @@ namespace GamedevGBG
 
         private Transform _dragTarget;
         private Vector3 _lastFramePos;
+        private Vector3 _offset;
 
         private void Start()
         {
@@ -21,11 +22,11 @@ namespace GamedevGBG
             if (_dragTarget != null) // TODO: Improve drag & drop
             {
                 _lastFramePos = _dragTarget.position;
-                Vector3 mouseWorld = _camera.ScreenToWorldPoint(new Vector3(_mousePos.x, _mousePos.y, -_camera.transform.position.z));
+                Vector3 mouseWorld = _camera.ScreenToWorldPoint(new Vector3(_mousePos.x, _mousePos.y, 8f));
                 _dragTarget.transform.position = new Vector3(
-                    x: mouseWorld.x,
-                    y: mouseWorld.y,
-                    z: _dragTarget.transform.position.z
+                    x: mouseWorld.x + _offset.x,
+                    y: mouseWorld.y + _offset.y,
+                    z: -2f
                 );
             }
         }
@@ -45,6 +46,7 @@ namespace GamedevGBG
                     _dragTarget = hit.collider.transform;
                     _dragTarget.GetComponent<Rigidbody>().isKinematic = true;
                     _dragTarget.transform.rotation = Quaternion.identity;
+                    _offset = _dragTarget.transform.position - hit.point;
                 }
             }
             else if (value.phase == InputActionPhase.Canceled && _dragTarget != null)
