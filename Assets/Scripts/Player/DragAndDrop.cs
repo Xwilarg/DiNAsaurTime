@@ -50,7 +50,7 @@ namespace GamedevGBG
             else if (value.phase == InputActionPhase.Canceled && _dragTarget != null)
             {
                 _dragTarget.GetComponent<Rigidbody>().isKinematic = false;
-                _dragTarget.GetComponent<Rigidbody>().AddForce((_dragTarget.position - _lastFramePos) * 10f, ForceMode.Impulse);
+                _dragTarget.GetComponent<Rigidbody>().AddForce((_dragTarget.position - _lastFramePos) * 20f, ForceMode.Impulse);
                 _dragTarget = null;
             }
         }
