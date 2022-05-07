@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace GamedevGBG.Prop
 {
@@ -123,7 +124,7 @@ namespace GamedevGBG.Prop
             // Moving the arm up then down
             if (_currentAction == ActionState.GoDown)
             {
-                _actionTimer += Time.deltaTime;
+                _actionTimer += Time.deltaTime * 2f;
                 _arm.position = new Vector3(
                     x: _arm.transform.position.x,
                     y: Mathf.Lerp(_baseValue, _objValue, _actionTimer),
@@ -156,6 +157,9 @@ namespace GamedevGBG.Prop
                         matArray = vialMR.materials;
                         matArray[_orders[pi.Inside.Count - 1]] = _propLoaded.GetComponent<MeshRenderer>().materials[1];
                         vialMR.materials = matArray;
+                        var elems = targetVial.GetComponent<PropInfo>().ID.Split(';').ToList();
+                        elems.Add(_propLoaded.GetComponent<PropInfo>().ID);
+                        targetVial.GetComponent<PropInfo>().ID = string.Join(";", elems);
 
                         _propLoaded = null;
                     }
@@ -163,7 +167,7 @@ namespace GamedevGBG.Prop
             }
             else if (_currentAction == ActionState.GoUp)
             {
-                _actionTimer += Time.deltaTime;
+                _actionTimer += Time.deltaTime * 2f;
                 _arm.position = new Vector3(
                     x: _arm.transform.position.x,
                     y: Mathf.Lerp(_objValue, _baseValue, _actionTimer),
