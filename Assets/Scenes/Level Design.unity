@@ -1460,10 +1460,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 178.118
       objectReference: {fileID: 0}
+    - target: {fileID: 7760578189107739123, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6878852016334433465, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     - target: {fileID: 8029772856662578391, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: m_Name
       value: vialLargeHolder (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8090977756107037847, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5340021565646300856, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27501742d211c384c89244124f109de8, type: 3}
 --- !u!4 &846024547 stripped
@@ -2260,10 +2268,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 194.263
       objectReference: {fileID: 0}
+    - target: {fileID: 7760578189107739123, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6878852016334433465, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     - target: {fileID: 8029772856662578391, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: m_Name
       value: vialLargeHolder (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8090977756107037847, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5340021565646300856, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27501742d211c384c89244124f109de8, type: 3}
 --- !u!4 &1282834513 stripped
@@ -3702,10 +3718,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 198.424
       objectReference: {fileID: 0}
+    - target: {fileID: 7760578189107739123, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6878852016334433465, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     - target: {fileID: 8029772856662578391, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: m_Name
       value: vialLargeHolder (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8090977756107037847, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5340021565646300856, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27501742d211c384c89244124f109de8, type: 3}
 --- !u!4 &2145014877 stripped
@@ -3825,6 +3849,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452215064}
     m_Modifications:
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _endText
+      value: synthesis completed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _timeUntilCompletion
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5788419705848261819, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
       propertyPath: m_Name
       value: pcr
@@ -3926,10 +3958,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 178.152
       objectReference: {fileID: 0}
+    - target: {fileID: 7760578189107739123, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6878852016334433465, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     - target: {fileID: 8029772856662578391, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: m_Name
       value: vialLargeHolder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8090977756107037847, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5340021565646300856, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27501742d211c384c89244124f109de8, type: 3}
 --- !u!4 &6879342468314528207 stripped

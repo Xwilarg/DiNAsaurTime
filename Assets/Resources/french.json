@@ -6,6 +6,7 @@
     "german": "Allemand",
     "dutch": "Néerlandais",
     "spanish": "Espagnol",
+    "customText": "",
 
     "developer": "Developeur",
     "3D artist": "Artist 3D",
@@ -15,5 +16,7 @@
     "spanish and german translation": "Traductions espagnol et allemande",
 
     "out of order": "Hors service",
-    "call mom": "Appeler maman"
+    "call mom": "Appeler maman",
+
+    "synthesis complete": "Synthèse complète"
 }

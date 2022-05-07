@@ -1,4 +1,5 @@
 ﻿using GamedevGBG.Player;
+using GamedevGBG.Translation;
 using System.Collections;
 using System.Linq;
 using TMPro;
@@ -17,6 +18,9 @@ namespace GamedevGBG.Prop
 
         [SerializeField]
         private TMP_Text _progression;
+
+        [SerializeField]
+        private string _endText;
 
         [SerializeField]
         private bool _processOnDone;
@@ -77,7 +81,6 @@ namespace GamedevGBG.Prop
                 }
                 if (_timer <= 0f)
                 {
-                    _progression.text = string.Empty;
                     _anim.SetBool("IsOpen", true);
                     _source.Stop();
                     if (_source != null && _onDone != null)
@@ -86,6 +89,13 @@ namespace GamedevGBG.Prop
                         _source.loop = false;
                         _source.Play();
                     }
+                    var endText = string.Empty;
+                    if (!string.IsNullOrEmpty(_endText))
+                    {
+                        endText = Translate.Instance.Tr(_endText);
+                    }
+                    _progression.text = endText;
+                    StartCoroutine(CleanText());
                     _onComplete?.Invoke(_targets[0].GetComponent<PropInfo>().ID);
                     foreach (var t in _targets)
                     {
@@ -94,6 +104,12 @@ namespace GamedevGBG.Prop
                     _targets = new GameObject[_slots.Length];
                 }
             }
+        }
+
+        private IEnumerator CleanText()
+        {
+            yield return new WaitForSeconds(3f);
+            _progression.text = string.Empty;
         }
 
         public override Vector3 GetPosition(int index)

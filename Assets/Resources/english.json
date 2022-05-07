@@ -6,6 +6,7 @@
     "german": "German",
     "dutch": "Dutch",
     "spanish": "Spanish",
+    "customText": "",
 
     "developer": "Developer",
     "3D artist": "3D Artist",
@@ -15,5 +16,7 @@
     "spanish and german translation": "Spanish and German translation",
 
     "out of order": "Out of Order",
-    "call mom": "Call mom"
+    "call mom": "Call mom",
+
+    "synthesis complete": "Synthesis Complete"
 }
