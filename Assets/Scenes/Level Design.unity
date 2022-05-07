@@ -2538,7 +2538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 956203a31aec48146bcd907a2db57f5f, type: 3}
       propertyPath: m_Name
-      value: arrowButton (2)
+      value: CONTROLS_RIGHT
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 956203a31aec48146bcd907a2db57f5f, type: 3}
@@ -2613,7 +2613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 956203a31aec48146bcd907a2db57f5f, type: 3}
       propertyPath: m_Name
-      value: arrowButton
+      value: CONTROLS_LEFT
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 956203a31aec48146bcd907a2db57f5f, type: 3}
@@ -4020,6 +4020,14 @@ PrefabInstance:
     - target: {fileID: 7954867816288101116, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954867816743011432, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0749
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954867816743011432, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0132
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
