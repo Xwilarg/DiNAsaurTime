@@ -19,6 +19,11 @@ namespace GamedevGBG.Prop
             return _targets[index].GetComponent<PropInfo>();
         }
 
+        public bool IsEmpty(int index)
+        {
+            return _targets[index] == null;
+        }
+
         protected void Init()
         {
             if (MachineManager.Instance != null)

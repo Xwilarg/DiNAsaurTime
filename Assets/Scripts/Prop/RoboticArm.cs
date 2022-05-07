@@ -76,7 +76,11 @@ namespace GamedevGBG.Prop
         public void DoAction()
         {
             if (!_isMoving && _currentAction == ActionState.Done
-                && (_targetIndex < _inputs.TargetCount && _propLoaded == null))
+                &&
+                (
+                (_targetIndex < _inputs.TargetCount && !_inputs.IsEmpty(_targetIndex) && _propLoaded == null) ||
+                (_targetIndex >= _inputs.TargetCount && !_outputs.IsEmpty(_targetIndex - _inputs.TargetCount) && _propLoaded != null && _propLoaded.Inside.Count < 3)
+                ))
             {
                 _currentAction = ActionState.GoDown;
                 _actionTimer = 0f;
@@ -131,10 +135,29 @@ namespace GamedevGBG.Prop
                     _currentAction = ActionState.GoUp;
                     if (_targetIndex < _inputs.TargetCount) // Filling current
                     {
+                        // Fill preview with new material
                         _propLoaded = _inputs.GetPropInfo(_targetIndex);
                         Material[] matArray = _previewMeshRenderer.materials;
                         matArray[_indexMaterialPreview] = _propLoaded.GetComponent<MeshRenderer>().materials[1];
                         _previewMeshRenderer.materials = matArray;
+                    }
+                    else
+                    {
+                        // Revert preview to default state
+                        Material[] matArray = _previewMeshRenderer.materials;
+                        matArray[_indexMaterialPreview] = _defaultPreviewMaterial;
+                        _previewMeshRenderer.materials = matArray;
+
+                        // Update vial color
+                        var targetVial = _outputs.GetPropInfo(_targetIndex - _inputs.TargetCount);
+                        var pi = targetVial.GetComponent<PropInfo>();
+                        pi.Inside.Add(_propLoaded);
+                        var vialMR = targetVial.GetComponent<MeshRenderer>();
+                        matArray = vialMR.materials;
+                        matArray[pi.Inside.Count] = _propLoaded.GetComponent<MeshRenderer>().materials[1];
+                        vialMR.materials = matArray;
+
+                        _propLoaded = null;
                     }
                 }
             }
