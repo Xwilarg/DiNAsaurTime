@@ -1973,7 +1973,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4371935242426221517}
-  m_Mesh: {fileID: 1261741994189946936, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
+  m_Mesh: {fileID: -6878852016334433465, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
 --- !u!4 &543450652314454502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6566047738696611329, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
@@ -2116,7 +2116,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7461303474394026831, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
+  - {fileID: 5340021565646300856, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2410,6 +2410,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452215064}
     m_Modifications:
+    - target: {fileID: 1730091481, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0162
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730091481, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0367
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730091481, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1808
+      objectReference: {fileID: 0}
     - target: {fileID: 7290921584137238598, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
       propertyPath: m_Name
       value: roboticPippetteArm
