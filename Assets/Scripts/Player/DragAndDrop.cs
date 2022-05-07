@@ -29,7 +29,7 @@ namespace GamedevGBG.Player
             if (_dragTarget != null) // TODO: Improve drag & drop
             {
                 _lastFramePos = _dragTarget.position;
-                Vector3 mouseWorld = _camera.ScreenToWorldPoint(new Vector3(_mousePos.x, _mousePos.y, 1.5f));
+                Vector3 mouseWorld = _camera.ScreenToWorldPoint(new Vector3(_mousePos.x, _mousePos.y, Mathf.Abs(_camera.transform.position.z - _dragTarget.position.z)));
                 _dragTarget.transform.position = new Vector3(
                     x: mouseWorld.x + _offset.x,
                     y: mouseWorld.y + _offset.y,
