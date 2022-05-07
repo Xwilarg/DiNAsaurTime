@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GamedevGBG.Prop
@@ -157,7 +158,16 @@ namespace GamedevGBG.Prop
                         matArray = vialMR.materials;
                         matArray[_orders[pi.Inside.Count - 1]] = _propLoaded.GetComponent<MeshRenderer>().materials[1];
                         vialMR.materials = matArray;
-                        var elems = targetVial.GetComponent<PropInfo>().ID.Split(';').ToList();
+                        var id = targetVial.GetComponent<PropInfo>().ID;
+                        List<string> elems;
+                        if (!string.IsNullOrWhiteSpace(id))
+                        {
+                            elems = id.Split(';').ToList();
+                        }
+                        else
+                        {
+                            elems = new();
+                        }
                         elems.Add(_propLoaded.GetComponent<PropInfo>().ID);
                         targetVial.GetComponent<PropInfo>().ID = string.Join(";", elems);
 
