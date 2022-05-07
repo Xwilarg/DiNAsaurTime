@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 912891071017522811}
   - component: {fileID: 912891071017522756}
   - component: {fileID: 912891071017522757}
+  - component: {fileID: 1068064289053612271}
   m_Layer: 0
   m_Name: Cupcake (1)
   m_TagString: Untagged
@@ -88,6 +89,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1068064289053612271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912891071017522758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674ae2925a9d6b748b3cdae756c11d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CatHead: {fileID: 2759726959321010328}
+  DinoHead: {fileID: 2208872652197796016}
+  AlienHead: {fileID: 6614602665985899662}
+  Tentacles: {fileID: 543450652442171953}
+  Topping: {fileID: 2471840276871179709}
+  CatTail: {fileID: 6938351518098587400}
+  DinoTail: {fileID: 7524049039909396135}
+  AlienTail: {fileID: 1114081499479062096}
 --- !u!1 &912891071040696310
 GameObject:
   m_ObjectHideFlags: 0

@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6296304425344722812}
   - component: {fileID: 6296304425344722786}
   - component: {fileID: 6296304425344722813}
+  - component: {fileID: 6492495540669652281}
   m_Layer: 0
   m_Name: Alien Head (1)
   m_TagString: Untagged
@@ -172,6 +173,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6492495540669652281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296304425344722815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e796ea937850a44912c784a0d56307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topping: {fileID: 490709095}
+  Bowl: {fileID: 3196154831491730447}
 --- !u!1001 &3157512208549407716
 PrefabInstance:
   m_ObjectHideFlags: 0
