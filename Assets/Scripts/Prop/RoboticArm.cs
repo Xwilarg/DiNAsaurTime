@@ -79,7 +79,7 @@ namespace GamedevGBG.Prop
                 &&
                 (
                 (_targetIndex < _inputs.TargetCount && !_inputs.IsEmpty(_targetIndex) && _propLoaded == null) ||
-                (_targetIndex >= _inputs.TargetCount && !_outputs.IsEmpty(_targetIndex - _inputs.TargetCount) && _propLoaded != null && _propLoaded.Inside.Count < 3)
+                (_targetIndex >= _inputs.TargetCount && !_outputs.IsEmpty(_targetIndex - _inputs.TargetCount) && _propLoaded != null && _outputs.GetPropInfo(_targetIndex - _inputs.TargetCount).Inside.Count < 3)
                 ))
             {
                 _currentAction = ActionState.GoDown;
@@ -154,7 +154,7 @@ namespace GamedevGBG.Prop
                         pi.Inside.Add(_propLoaded);
                         var vialMR = targetVial.GetComponent<MeshRenderer>();
                         matArray = vialMR.materials;
-                        matArray[pi.Inside.Count] = _propLoaded.GetComponent<MeshRenderer>().materials[1];
+                        matArray[_orders[pi.Inside.Count - 1]] = _propLoaded.GetComponent<MeshRenderer>().materials[1];
                         vialMR.materials = matArray;
 
                         _propLoaded = null;
@@ -177,5 +177,10 @@ namespace GamedevGBG.Prop
                 }
             }
         }
+
+        private int[] _orders = new[]
+        {
+            1, 3, 2
+        };
     }
 }
