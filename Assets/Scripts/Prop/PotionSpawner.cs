@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace GamedevGBG.Prop
@@ -11,7 +12,7 @@ namespace GamedevGBG.Prop
         private GameObject _prefab;
 
         [SerializeField]
-        private Material[] _mats;
+        private MaterialArray[] _mats;
 
         [SerializeField]
         private bool _randomMat;
@@ -42,6 +43,10 @@ namespace GamedevGBG.Prop
             }
         }
 
+        private int[] _orders = new[]
+        {
+            1, 3, 2
+        };
         private GameObject SpawnAndAdd(int index)
         {
             var go = Instantiate(_prefab, Vector3.zero, _prefab.transform.rotation);
@@ -53,6 +58,18 @@ namespace GamedevGBG.Prop
                 matArray[1] = rand.Mat;
                 mesh.materials = matArray;
                 go.GetComponent<PropInfo>().ID = rand.ID;
+            }
+            else if (_mats.Any())
+            {
+                var mesh = go.GetComponent<MeshRenderer>();
+                Material[] matArray = mesh.materials;
+                var i = 1;
+                foreach (var m in _mats[index].Mats)
+                {
+                    matArray[_orders[i - 1]] = m;
+                    i++;
+                }                    
+                mesh.materials = matArray;
             }
             AddAtPosition(go, index);
             return go;
