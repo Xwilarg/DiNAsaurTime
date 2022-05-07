@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2122584666108386427}
   - component: {fileID: 3088119244007396318}
   - component: {fileID: 954696457356257044}
+  - component: {fileID: 1613451641148269414}
   m_Layer: 0
   m_Name: pizza
   m_TagString: Untagged
@@ -86,3 +87,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1613451641148269414
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603069461846591169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12840864, y: 0.17448793, z: 0.020650743}
+  m_Center: {x: 2.0671464e-25, y: 0.004623069, z: 0.010519376}

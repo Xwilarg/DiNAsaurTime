@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 2526146323067144201}
   - component: {fileID: 2526146323067144206}
   - component: {fileID: 572999020380275644}
+  - component: {fileID: 716731408498152838}
   m_Layer: 0
   m_Name: Alien Body
   m_TagString: Untagged
@@ -137,9 +138,23 @@ MonoBehaviour:
   DinoHead: {fileID: 2526146321591876455}
   AlienHead: {fileID: 2526146322130071579}
   Tentacles: {fileID: 4496355201973540750}
+  Topping: {fileID: 0}
   CatTail: {fileID: 2526146322081894676}
   DinoTail: {fileID: 2526146323320328775}
   AlienTail: {fileID: 2526146321967770501}
+--- !u!65 &716731408498152838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526146323067144207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12337164, y: 0.038045987, z: 0.14865822}
+  m_Center: {x: 0, y: -0.003794233, z: 0.07365436}
 --- !u!1 &2526146323482344465
 GameObject:
   m_ObjectHideFlags: 0

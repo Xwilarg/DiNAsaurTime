@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7846049444891198804}
   - component: {fileID: 7846049444891198806}
   - component: {fileID: 7846049444891198807}
+  - component: {fileID: 1422772698029295721}
   m_Layer: 0
   m_Name: Cat Tail (1)
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1422772698029295721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7846049444891198805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.025191266, y: 0.04662643, z: 0.10362521}
+  m_Center: {x: -0.0000029150397, y: -0.074534014, z: 0.12970753}

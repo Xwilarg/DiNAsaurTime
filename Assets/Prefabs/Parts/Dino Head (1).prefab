@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 1300485236332261102}
   - component: {fileID: 1300485236332261097}
   - component: {fileID: 1419914994563873135}
+  - component: {fileID: 584804116613156653}
   m_Layer: 0
   m_Name: Dino Head (1)
   m_TagString: Untagged
@@ -188,6 +189,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topping: {fileID: 3687456424074574620}
   Bowl: {fileID: 597377380}
+--- !u!65 &584804116613156653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300485236332261099}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04574885, y: 0.050136477, z: 0.058469843}
+  m_Center: {x: 0, y: 0.08460635, z: 0.074388444}
 --- !u!1001 &3793934595453295863
 PrefabInstance:
   m_ObjectHideFlags: 0

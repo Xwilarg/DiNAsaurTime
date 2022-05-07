@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 3091642648025148657}
   - component: {fileID: 3091642648025148659}
   - component: {fileID: 3091642648025148658}
+  - component: {fileID: 6828182040917827006}
   m_Layer: 0
   m_Name: Cat Head
   m_TagString: Untagged
@@ -174,6 +175,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6828182040917827006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3091642648025148656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.054196328, y: 0.05414437, z: 0.06506948}
+  m_Center: {x: -0.00001461152, y: 0.077358775, z: 0.099624164}
 --- !u!1001 &330611852
 PrefabInstance:
   m_ObjectHideFlags: 0

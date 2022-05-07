@@ -17,10 +17,12 @@ namespace GamedevGBG.Prop
             var heads = elems.Where(x => x.Type == ContentType.Head).ToArray();
             var tails = elems.Where(x => x.Type == ContentType.Tail).ToArray();
             var others = elems.Where(x => x.Type == ContentType.Other).ToArray();
+
+            GameObject targetGo = null;
             if (torsos.Any())
             {
                 var target = torsos[Random.Range(0, torsos.Length)];
-                var targetGo = Instantiate(target.Prefab, _spawnPoint.position, Quaternion.identity);
+                targetGo = Instantiate(target.Prefab, _spawnPoint.position, Quaternion.identity);
                 var targetGoTorso = targetGo.GetComponent<Torso>();
                 if (heads.Any())
                 {
@@ -48,9 +50,9 @@ namespace GamedevGBG.Prop
                         }
                     }
                 }
-                else if (elems.Any(x => x.Animal == AnimalType.Cupcake && x.Type == ContentType.Hat))
+                else if ((target.Animal == AnimalType.Cactus || target.Animal == AnimalType.Cupcake) && elems.Any(x => x.Animal == AnimalType.Cupcake && x.Type == ContentType.Hat))
                 {
-                    targetGoTorso.Topping?.gameObject?.SetActive(true);
+                    targetGoTorso.Topping.gameObject.SetActive(true);
                 }
                 if (tails.Any())
                 {
@@ -67,8 +69,8 @@ namespace GamedevGBG.Prop
             else if (heads.Any())
             {
                 var targetHead = heads[Random.Range(0, heads.Length)];
-                var targetHeadGo = Instantiate(targetHead.Prefab, _spawnPoint.position, Quaternion.identity);
-                var targetGoHead = targetHeadGo.GetComponent<Head>();
+                targetGo = Instantiate(targetHead.Prefab, _spawnPoint.position, Quaternion.identity);
+                var targetGoHead = targetGo.GetComponent<Head>();
                 if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Cupcake))
                 {
                     targetGoHead.Topping.gameObject.SetActive(true);
@@ -77,6 +79,12 @@ namespace GamedevGBG.Prop
                 {
                     targetGoHead.Bowl.gameObject.SetActive(true);
                 }
+            }
+
+            if (targetGo != null)
+            {
+                targetGo.AddComponent<Rigidbody>();
+                targetGo.transform.Rotate(new Vector3(-90f, 0f, 0f));
             }
         }
     }
