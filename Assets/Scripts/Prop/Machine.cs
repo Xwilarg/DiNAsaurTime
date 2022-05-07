@@ -27,6 +27,13 @@ namespace GamedevGBG.Prop
         private float _timer = -1f;
         private GameObject[] _targets;
 
+        public int SlotCount => _slots.Length;
+
+        public Vector3 GetSlotPosition(int index)
+        {
+            return _slots[index].position;
+        }
+
         private void Awake()
         {
             _anim = GetComponent<Animator>();

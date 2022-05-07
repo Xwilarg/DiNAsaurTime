@@ -2,7 +2,6 @@
 using System.Threading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace GamedevGBG.Prop
 {
@@ -108,20 +107,6 @@ namespace GamedevGBG.Prop
             if (_number != string.Empty)
             {
                 _result.text = _number;
-            }
-        }
-
-        public void OnClick(InputAction.CallbackContext value)
-        {
-            if (value.performed)
-            {
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue()), out RaycastHit hit))
-                {
-                    if (hit.collider.name.StartsWith("CALC_"))
-                    {
-                        Add(hit.collider.name[5]);
-                    }
-                }
             }
         }
 

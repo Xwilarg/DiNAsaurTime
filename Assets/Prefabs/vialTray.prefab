@@ -193,11 +193,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info: {fileID: 0}
   _slots:
-  - {fileID: 2787995576886722731}
-  - {fileID: 2233917910625502177}
-  - {fileID: 8067260892453587092}
-  - {fileID: 7988241940510815998}
   - {fileID: 2711166043065984256}
+  - {fileID: 7988241940510815998}
+  - {fileID: 8067260892453587092}
+  - {fileID: 2233917910625502177}
+  - {fileID: 2787995576886722731}
   _progression: {fileID: 0}
   _processOnDone: 0
 --- !u!1 &5405265960957458426
