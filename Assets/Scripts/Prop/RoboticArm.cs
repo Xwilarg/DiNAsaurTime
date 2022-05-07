@@ -14,7 +14,7 @@ namespace GamedevGBG.Prop
         private float _speed;
 
         [SerializeField]
-        private Transform _arm;
+        private Transform _arm, _hand;
 
         private int _targetIndex;
         private int _oldIndex;
@@ -64,7 +64,7 @@ namespace GamedevGBG.Prop
         private void Update()
         {
             var target = GetPosition(_targetIndex);
-            var dist = Vector3.Distance(_arm.transform.position, GetPosition(_targetIndex));
+            var dist = Vector3.Distance(_hand.transform.position, new Vector3(target.x, _hand.transform.position.y, target.z));
             if (dist < _oldDist)
             {
                 _oldDist = dist;
