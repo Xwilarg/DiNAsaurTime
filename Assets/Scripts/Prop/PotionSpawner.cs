@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace GamedevGBG.Prop
 {
-    internal class PotionSpawner : MonoBehaviour
+    internal class PotionSpawner : AContainer
     {
         [SerializeField]
         private Transform[] _slots;
@@ -12,15 +13,30 @@ namespace GamedevGBG.Prop
         [SerializeField]
         private Material[] _mats;
 
+        [SerializeField]
+        private int _baseSpawnCount;
+
+        public override int TargetCount =>_slots.Length;
+
+        public override Vector3 GetPosition(int index)
+        {
+            return _slots[index].position;
+        }
+
         private void Start()
         {
-            foreach (var s in _slots)
+            Init();
+            for (int i = 0; i < _baseSpawnCount; i++)
             {
-                var go = Instantiate(_prefab, s.transform.position, _prefab.transform.rotation);
-                var mesh = go.GetComponent<MeshRenderer>();
-                Material[] matArray = mesh.materials;
-                matArray[1] = _mats[Random.Range(0, _mats.Length)];
-                mesh.materials = matArray;
+                var go = Instantiate(_prefab, Vector3.zero, _prefab.transform.rotation);
+                if (_mats.Any())
+                {
+                    var mesh = go.GetComponent<MeshRenderer>();
+                    Material[] matArray = mesh.materials;
+                    matArray[1] = _mats[Random.Range(0, _mats.Length)];
+                    mesh.materials = matArray;
+                }
+                Add(go);
             }
         }
     }

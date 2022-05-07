@@ -13,6 +13,11 @@ namespace GamedevGBG.Player
             Instance = this;
         }
 
+        [SerializeField]
+        private AudioClip _grab, _drop;
+
+        private AudioSource _source;
+
         private Vector2 _mousePos;
         private Camera _camera;
 
@@ -22,6 +27,7 @@ namespace GamedevGBG.Player
 
         private void Start()
         {
+            _source = GetComponent<AudioSource>();
             _camera = Camera.main;
         }
 
@@ -58,6 +64,7 @@ namespace GamedevGBG.Player
                         _dragTarget = hit.collider.transform;
                         _dragTarget.GetComponent<Rigidbody>().isKinematic = true;
                         _offset = _dragTarget.transform.position - hit.point;
+                        _source.PlayOneShot(_grab);
                     }
                 }
             }
@@ -72,6 +79,7 @@ namespace GamedevGBG.Player
         public void Drop()
         {
             _dragTarget = null;
+            _source.PlayOneShot(_drop);
         }
     }
 }
