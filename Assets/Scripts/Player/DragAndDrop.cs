@@ -1,3 +1,4 @@
+using GamedevGBG.Prop;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -48,11 +49,16 @@ namespace GamedevGBG.Player
             if (value.phase == InputActionPhase.Started)
             {
                 var ray = _camera.ScreenPointToRay(_mousePos);
-                if (Physics.Raycast(ray, out RaycastHit hit, float.PositiveInfinity) && hit.collider.CompareTag("Draggable"))
+                if (Physics.Raycast(ray, out RaycastHit hit, float.PositiveInfinity))
                 {
-                    _dragTarget = hit.collider.transform;
-                    _dragTarget.GetComponent<Rigidbody>().isKinematic = true;
-                    _offset = _dragTarget.transform.position - hit.point;
+                    Debug.Log($"Click detected on {hit.collider.name}");
+                    if (hit.collider.CompareTag("Draggable"))
+                    {
+                        MachineManager.Instance.RemoveFromMachine(hit.collider.gameObject);
+                        _dragTarget = hit.collider.transform;
+                        _dragTarget.GetComponent<Rigidbody>().isKinematic = true;
+                        _offset = _dragTarget.transform.position - hit.point;
+                    }
                 }
             }
             else if (value.phase == InputActionPhase.Canceled && _dragTarget != null)

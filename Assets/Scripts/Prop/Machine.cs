@@ -33,15 +33,29 @@ namespace GamedevGBG.Prop
             _targets = new GameObject[_slots.Length];
         }
 
+        public void Remove(GameObject go)
+        {
+            for (int i = 0; i < _targets.Length; i++)
+            {
+                var t = _targets[i];
+                if (t != null && t.GetInstanceID() == go.GetInstanceID())
+                {
+                    _targets[i] = null;
+                    break;
+                }
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (_targets.Any(x => x == null))
+            // Make sure that the object isn't already there and that there is empty space
+            if (other.CompareTag("Draggable") && !_targets.Any(x => x != null && x.GetInstanceID() == other.gameObject.GetInstanceID()) && _targets.Any(x => x == null))
             {
                 var index = Array.IndexOf(_targets, null);
                 other.transform.position = _slots[index].position;
                 _targets[index] = other.gameObject;
                 DragAndDrop.Instance.Drop();
-                if (!_targets.Any(x => x == null) && _processOnDone)
+                if (!_targets.Any(x => x == null) && _processOnDone) // All emplacement full
                 {
                     _anim.SetBool("IsOpen", false);
                     StartCoroutine(WaitAndProcess());

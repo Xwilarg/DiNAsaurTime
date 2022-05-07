@@ -12,6 +12,8 @@ namespace GamedevGBG.Prop
         private float _total;
         private Operation _nextOperation = Operation.Sum;
 
+        private bool _isBroken;
+
         [SerializeField]
         private TMP_Text _result;
 
@@ -41,7 +43,12 @@ namespace GamedevGBG.Prop
                 case Operation.Divide:
                     if (float.Parse(_number) == 0)
                     {
-                        // Ohno
+                        _isBroken = true;
+                        _result.text = "ERROR";
+                        var rb = GetComponent<Rigidbody>();
+                        rb.AddForce((Vector3.up + Vector3.right * Random.Range(-.25f, .25f)) * 10f, ForceMode.Impulse);
+                        rb.AddTorque(Random.rotation.eulerAngles, ForceMode.Impulse);
+                        return;
                     }
                     else
                     {
@@ -62,6 +69,10 @@ namespace GamedevGBG.Prop
 
         public void Add(char nb)
         {
+            if (_isBroken)
+            {
+                return;
+            }
             if (nb == '.')
             {
                 if (!_number.Contains("."))
