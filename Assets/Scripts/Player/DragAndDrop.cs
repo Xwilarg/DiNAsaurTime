@@ -63,10 +63,7 @@ namespace GamedevGBG.Player
                     Debug.Log($"Click detected on {hit.collider.name}");
                     if (hit.collider.CompareTag("Draggable"))
                     {
-                        if (MachineManager.Instance != null)
-                        {
-                            MachineManager.Instance.RemoveFromMachine(hit.collider.gameObject);
-                        }
+                        MachineManager.Instance.RemoveFromMachine(hit.collider.gameObject);
                         _dragTarget = hit.collider.transform;
                         _dragTarget.GetComponent<Rigidbody>().isKinematic = true;
                         _offset = _dragTarget.transform.position - hit.point;

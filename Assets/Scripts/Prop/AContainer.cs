@@ -26,10 +26,7 @@ namespace GamedevGBG.Prop
 
         protected void Init()
         {
-            if (MachineManager.Instance != null)
-            {
-                MachineManager.Instance.RegisterContainer(this);
-            }
+            MachineManager.Instance.RegisterContainer(this);
             _targets = new GameObject[TargetCount];
         }
 
