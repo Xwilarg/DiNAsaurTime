@@ -180,7 +180,7 @@ namespace GamedevGBG.Prop
 
         private int[] _orders = new[]
         {
-            1, 3, 2
+            1, 3, 4, 2
         };
     }
 }
