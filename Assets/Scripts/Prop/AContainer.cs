@@ -13,6 +13,7 @@ namespace GamedevGBG.Prop
 
         protected void Init()
         {
+            MachineManager.Instance.RegisterContainer(this);
             _targets = new GameObject[TargetCount];
         }
 

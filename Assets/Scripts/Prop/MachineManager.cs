@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace GamedevGBG.Prop
@@ -12,8 +13,12 @@ namespace GamedevGBG.Prop
             Instance = this;
         }
 
-        [SerializeField]
-        private Machine[] _machines;
+        private List<AContainer> _machines = new();
+
+        public void RegisterContainer(AContainer c)
+        {
+            _machines.Add(c);
+        }
 
         [SerializeField]
         private Calculator _calculator;
