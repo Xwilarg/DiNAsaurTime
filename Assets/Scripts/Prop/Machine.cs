@@ -1,6 +1,8 @@
 ﻿using GamedevGBG.Player;
 using GamedevGBG.SO;
+using System;
 using System.Collections;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -17,25 +19,29 @@ namespace GamedevGBG.Prop
         [SerializeField]
         private TMP_Text _progression;
 
+        [SerializeField]
+        private bool _processOnDone;
+
         private Animator _anim;
 
-        private int _fillIndex;
         private float _timer = -1f;
+        private GameObject[] _targets;
 
         private void Awake()
         {
             _anim = GetComponent<Animator>();
+            _targets = new GameObject[_slots.Length];
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (_fillIndex < _slots.Length)
+            if (_targets.Any(x => x == null))
             {
-                other.transform.position = _slots[_fillIndex].position;
-                other.transform.parent = _slots[_fillIndex].transform;
+                var index = Array.IndexOf(_targets, null);
+                other.transform.position = _slots[index].position;
+                _targets[index] = other.gameObject;
                 DragAndDrop.Instance.Drop();
-                _fillIndex++;
-                if (_fillIndex == _slots.Length)
+                if (!_targets.Any(x => x == null) && _processOnDone)
                 {
                     _anim.SetBool("IsOpen", false);
                     StartCoroutine(WaitAndProcess());
@@ -60,11 +66,11 @@ namespace GamedevGBG.Prop
                 }
                 if (_timer <= 0f)
                 {
-                    foreach (var slot in _slots)
+                    foreach (var t in _targets)
                     {
-                        Destroy(slot.GetChild(0).gameObject);
+                        Destroy(t);
                     }
-                    _fillIndex = 0;
+                    _targets = new GameObject[_slots.Length];
                     _progression.text = string.Empty;
                     _anim.SetBool("IsOpen", true);
                 }
