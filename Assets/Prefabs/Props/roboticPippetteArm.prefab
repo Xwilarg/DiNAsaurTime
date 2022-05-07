@@ -534,8 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d903e9470dffb4baaaef456e4f7c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vialsDeposit: {fileID: 7633574279168702858}
-  _targetObject: {fileID: 586299373496014408}
+  _inputs: {fileID: 7633574279168702858}
+  _outputs: {fileID: 1844576416}
   _speed: 0.1
   _arm: {fileID: 4231888720586742473}
   _hand: {fileID: 4519180375597837721}

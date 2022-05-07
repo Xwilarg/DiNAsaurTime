@@ -1,16 +1,16 @@
 ﻿using GamedevGBG.Player;
-using GamedevGBG.SO;
 using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GamedevGBG.Prop
 {
     public class Machine : AContainer
     {
         [SerializeField]
-        private MachineInfo _info;
+        private float _timeUntilCompletion;
 
         [SerializeField]
         private Transform[] _slots;
@@ -26,6 +26,9 @@ namespace GamedevGBG.Prop
 
         [SerializeField]
         private AudioClip _onDoing, _onDone;
+
+        [SerializeField]
+        private UnityEvent _onComplete;
 
         private AudioSource _source;
 
@@ -60,7 +63,7 @@ namespace GamedevGBG.Prop
                 _source.loop = true;
                 _source.Play();
             }
-            _timer = _info.ProcessTime;
+            _timer = _timeUntilCompletion;
         }
 
         private void Update()
@@ -70,7 +73,7 @@ namespace GamedevGBG.Prop
                 _timer -= Time.deltaTime;
                 if (_progression != null)
                 {
-                    _progression.text = $"{(_info.ProcessTime - _timer) * 100f / _info.ProcessTime:0.00}%";
+                    _progression.text = $"{(_timeUntilCompletion - _timer) * 100f / _timeUntilCompletion:0.00}%";
                 }
                 if (_timer <= 0f)
                 {
@@ -88,6 +91,7 @@ namespace GamedevGBG.Prop
                         _source.loop = false;
                         _source.Play();
                     }
+                    _onComplete?.Invoke();
                 }
             }
         }

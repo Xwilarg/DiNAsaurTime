@@ -13,11 +13,14 @@ namespace GamedevGBG.Prop
 
         protected void Init()
         {
-            MachineManager.Instance.RegisterContainer(this);
+            if (MachineManager.Instance != null)
+            {
+                MachineManager.Instance.RegisterContainer(this);
+            }
             _targets = new GameObject[TargetCount];
         }
 
-        public virtual void Remove(GameObject go)
+        public virtual int Remove(GameObject go)
         {
             for (int i = 0; i < _targets.Length; i++)
             {
@@ -25,9 +28,10 @@ namespace GamedevGBG.Prop
                 if (t != null && t.GetInstanceID() == go.GetInstanceID())
                 {
                     _targets[i] = null;
-                    break;
+                    return i;
                 }
             }
+            return -1;
         }
 
         public virtual void Add(GameObject go)
@@ -35,9 +39,14 @@ namespace GamedevGBG.Prop
             if (!_targets.Any(x => x != null && x.GetInstanceID() == go.GetInstanceID()) && _targets.Any(x => x == null))
             {
                 var index = Array.IndexOf(_targets, null);
-                go.transform.position = GetPosition(index);
-                _targets[index] = go;
+                AddAtPosition(go, index);
             }
+        }
+
+        public void AddAtPosition(GameObject go, int index)
+        {
+            go.transform.position = GetPosition(index);
+            _targets[index] = go;
         }
     }
 }

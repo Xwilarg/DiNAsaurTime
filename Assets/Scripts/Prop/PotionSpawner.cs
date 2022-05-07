@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace GamedevGBG.Prop
@@ -28,21 +29,37 @@ namespace GamedevGBG.Prop
             Init();
             for (int i = 0; i < _baseSpawnCount; i++)
             {
-                var go = Instantiate(_prefab, Vector3.zero, _prefab.transform.rotation);
-                if (_mats.Any())
-                {
-                    var mesh = go.GetComponent<MeshRenderer>();
-                    Material[] matArray = mesh.materials;
-                    matArray[1] = _mats[Random.Range(0, _mats.Length)];
-                    mesh.materials = matArray;
-                }
-                Add(go);
+                SpawnAndAdd(i);
             }
         }
 
-        public override void Remove(GameObject go)
+        private void SpawnAndAdd(int index)
         {
-            base.Remove(go);
+            var go = Instantiate(_prefab, Vector3.zero, _prefab.transform.rotation);
+            if (_mats.Any())
+            {
+                var mesh = go.GetComponent<MeshRenderer>();
+                Material[] matArray = mesh.materials;
+                matArray[1] = _mats[Random.Range(0, _mats.Length)];
+                mesh.materials = matArray;
+            }
+            AddAtPosition(go, index);
+        }
+
+        public override int Remove(GameObject go)
+        {
+            var index = base.Remove(go);
+            if (index != -1)
+            {
+                StartCoroutine(WaitAndRespawn(index));
+            }
+            return index;
+        }
+
+        private IEnumerator WaitAndRespawn(int index)
+        {
+            yield return new WaitForSeconds(5f);
+            SpawnAndAdd(index);
         }
     }
 }

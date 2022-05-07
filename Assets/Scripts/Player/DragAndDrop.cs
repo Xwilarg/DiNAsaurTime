@@ -16,6 +16,9 @@ namespace GamedevGBG.Player
         [SerializeField]
         private AudioClip _grab, _drop;
 
+        [SerializeField]
+        private float _frontOffset;
+
         private AudioSource _source;
 
         private Vector2 _mousePos;
@@ -40,7 +43,7 @@ namespace GamedevGBG.Player
                 _dragTarget.transform.position = new Vector3(
                     x: mouseWorld.x + _offset.x,
                     y: mouseWorld.y + _offset.y,
-                    z: -10.1f
+                    z: _frontOffset
                 );
             }
         }
@@ -60,7 +63,10 @@ namespace GamedevGBG.Player
                     Debug.Log($"Click detected on {hit.collider.name}");
                     if (hit.collider.CompareTag("Draggable"))
                     {
-                        MachineManager.Instance.RemoveFromMachine(hit.collider.gameObject);
+                        if (MachineManager.Instance != null)
+                        {
+                            MachineManager.Instance.RemoveFromMachine(hit.collider.gameObject);
+                        }
                         _dragTarget = hit.collider.transform;
                         _dragTarget.GetComponent<Rigidbody>().isKinematic = true;
                         _offset = _dragTarget.transform.position - hit.point;
