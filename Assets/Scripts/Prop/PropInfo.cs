@@ -8,5 +8,6 @@ namespace GamedevGBG.Prop
         public PropType Type;
 
         public List<PropInfo> Inside = new();
+        public string ID;
     }
 }

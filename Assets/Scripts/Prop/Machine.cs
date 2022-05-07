@@ -28,7 +28,7 @@ namespace GamedevGBG.Prop
         private AudioClip _onDoing, _onDone;
 
         [SerializeField]
-        private UnityEvent _onComplete;
+        private UnityEvent<string> _onComplete;
 
         private AudioSource _source;
 
@@ -77,11 +77,6 @@ namespace GamedevGBG.Prop
                 }
                 if (_timer <= 0f)
                 {
-                    foreach (var t in _targets)
-                    {
-                        Destroy(t);
-                    }
-                    _targets = new GameObject[_slots.Length];
                     _progression.text = string.Empty;
                     _anim.SetBool("IsOpen", true);
                     _source.Stop();
@@ -91,7 +86,12 @@ namespace GamedevGBG.Prop
                         _source.loop = false;
                         _source.Play();
                     }
-                    _onComplete?.Invoke();
+                    _onComplete?.Invoke(_targets[0].GetComponent<PropInfo>().ID);
+                    foreach (var t in _targets)
+                    {
+                        Destroy(t);
+                    }
+                    _targets = new GameObject[_slots.Length];
                 }
             }
         }
