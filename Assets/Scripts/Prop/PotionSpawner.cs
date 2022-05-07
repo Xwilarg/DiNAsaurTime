@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 namespace GamedevGBG.Prop
@@ -13,6 +12,9 @@ namespace GamedevGBG.Prop
 
         [SerializeField]
         private Material[] _mats;
+
+        [SerializeField]
+        private bool _randomMat;
 
         [SerializeField]
         private int _baseSpawnCount;
@@ -43,12 +45,14 @@ namespace GamedevGBG.Prop
         private GameObject SpawnAndAdd(int index)
         {
             var go = Instantiate(_prefab, Vector3.zero, _prefab.transform.rotation);
-            if (_mats.Any())
+            if (_randomMat)
             {
                 var mesh = go.GetComponent<MeshRenderer>();
                 Material[] matArray = mesh.materials;
-                matArray[1] = _mats[Random.Range(0, _mats.Length)];
+                var rand = VialManager.Instance.RandomVial;
+                matArray[1] = rand.Mat;
                 mesh.materials = matArray;
+                go.GetComponent<PropInfo>().ID = rand.ID;
             }
             AddAtPosition(go, index);
             return go;

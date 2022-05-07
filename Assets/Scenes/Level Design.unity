@@ -1393,12 +1393,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 452215064}
     m_Modifications:
     - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: _randomMat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: _baseSpawnCount
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: _mats.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: _mats.Array.data[0]
@@ -2201,12 +2205,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 452215064}
     m_Modifications:
     - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: _randomMat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: _baseSpawnCount
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: _mats.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: _mats.Array.data[0]
@@ -3643,6 +3651,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2111338266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2096340788390946142, guid: bc26e77d209b2d641bdfeed343a4a0f2, type: 3}
+  m_PrefabInstance: {fileID: 961428822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2111338272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111338266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cb434db00759045aaf4779df2f31b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _info:
+  - ID: Dino_Torso
+    Mat: {fileID: 2100000, guid: 04bd1c1897e191b43b209ab0b3972303, type: 2}
+    Description: 
+  - ID: Cat_Torso
+    Mat: {fileID: 2100000, guid: e6d18fc8210e84a489b3f8782fcb413e, type: 2}
+    Description: 
+  - ID: Alien_Torso
+    Mat: {fileID: 2100000, guid: 3e960403229fcc54d901172e92f3a6ae, type: 2}
+    Description: 
+  - ID: Muffin
+    Mat: {fileID: 2100000, guid: cd1d44659e0905e419f0bea966494daf, type: 2}
+    Description: 
 --- !u!1001 &2145014876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3651,12 +3689,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 452215064}
     m_Modifications:
     - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: _randomMat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: _baseSpawnCount
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: _mats.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: _mats.Array.data[0]
@@ -3914,6 +3956,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452215064}
     m_Modifications:
+    - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: _randomMat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 609321318690996360, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: _mats.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2834554464744384793, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3984,6 +4034,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452215064}
     m_Modifications:
+    - target: {fileID: 919132149135725058, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
+      propertyPath: _speed
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7290921584137238598, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
       propertyPath: m_Name
       value: roboticPippetteArm
