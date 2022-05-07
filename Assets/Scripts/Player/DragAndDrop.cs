@@ -1,10 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace GamedevGBG
+namespace GamedevGBG.Player
 {
     public class DragAndDrop : MonoBehaviour
     {
+        public static DragAndDrop Instance { get; private set; }
+
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         private Vector2 _mousePos;
         private Camera _camera;
 
@@ -52,8 +59,13 @@ namespace GamedevGBG
             {
                 _dragTarget.GetComponent<Rigidbody>().isKinematic = false;
                 _dragTarget.GetComponent<Rigidbody>().AddForce((_dragTarget.position - _lastFramePos) * 20f, ForceMode.Impulse);
-                _dragTarget = null;
+                Drop();
             }
+        }
+
+        public void Drop()
+        {
+            _dragTarget = null;
         }
     }
 }
