@@ -24,7 +24,15 @@ namespace GamedevGBG.Prop
         private float _objValue;
         private float _actionTimer;
 
+        private const int _indexMaterialPreview = 2;
+        private Material _defaultPreviewMaterial;
+
+        [SerializeField]
+        private MeshRenderer _previewMeshRenderer;
+
         private AudioSource _movementAudio;
+
+        private PropInfo _propLoaded;
 
         private enum ActionState
         {
@@ -36,6 +44,7 @@ namespace GamedevGBG.Prop
 
         private void Start()
         {
+            _defaultPreviewMaterial = _previewMeshRenderer.materials[_indexMaterialPreview];
             _movementAudio = GetComponent<AudioSource>();
             _targetIndex = _inputs.TargetCount;
             _oldIndex = _targetIndex - 1;
@@ -66,7 +75,8 @@ namespace GamedevGBG.Prop
 
         public void DoAction()
         {
-            if (!_isMoving && _currentAction == ActionState.Done)
+            if (!_isMoving && _currentAction == ActionState.Done
+                && (_targetIndex < _inputs.TargetCount && _propLoaded == null))
             {
                 _currentAction = ActionState.GoDown;
                 _actionTimer = 0f;
@@ -119,6 +129,13 @@ namespace GamedevGBG.Prop
                 {
                     _actionTimer = 0f;
                     _currentAction = ActionState.GoUp;
+                    if (_targetIndex < _inputs.TargetCount) // Filling current
+                    {
+                        _propLoaded = _inputs.GetPropInfo(_targetIndex);
+                        Material[] matArray = _previewMeshRenderer.materials;
+                        matArray[_indexMaterialPreview] = _propLoaded.GetComponent<MeshRenderer>().materials[1];
+                        _previewMeshRenderer.materials = matArray;
+                    }
                 }
             }
             else if (_currentAction == ActionState.GoUp)

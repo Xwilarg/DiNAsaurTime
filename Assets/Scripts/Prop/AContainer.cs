@@ -10,6 +10,14 @@ namespace GamedevGBG.Prop
 
         public abstract int TargetCount { get; }
         public abstract Vector3 GetPosition(int index);
+        public PropInfo GetPropInfo(int index)
+        {
+            if (_targets[index] == null)
+            {
+                return null;
+            }
+            return _targets[index].GetComponent<PropInfo>();
+        }
 
         protected void Init()
         {
