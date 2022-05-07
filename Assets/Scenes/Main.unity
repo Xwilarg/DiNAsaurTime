@@ -2338,6 +2338,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452215064}
     m_Modifications:
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onDone
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f3d2e2b677849443ab16e716ce458f1, type: 3}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onDoing
+      value: 
+      objectReference: {fileID: 8300000, guid: cd107bd7feef6bc44a3dca3d32b810ca, type: 3}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _timeUntilCompletion
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5788419705848261819, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
       propertyPath: m_Name
       value: pcr
