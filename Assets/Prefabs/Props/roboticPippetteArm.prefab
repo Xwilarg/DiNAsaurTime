@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730091480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09189, y: 0.04143, z: 0.1454}
+  m_LocalPosition: {x: -0.0162, y: 0.0367, z: 0.1808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167,6 +167,7 @@ MonoBehaviour:
   _prefab: {fileID: 8609394836737242246, guid: 18b1cb11e123b6b4d8ec150e822e639b, type: 3}
   _mats: []
   _baseSpawnCount: 2
+  _ids: []
 --- !u!1 &1352401867276190505
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +434,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: -592717601212738333, guid: 776b084884850274abed841175729be1, type: 3}
   - {fileID: -5836581883062161383, guid: 776b084884850274abed841175729be1, type: 3}
+  - {fileID: -5836581883062161383, guid: 776b084884850274abed841175729be1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -540,6 +542,7 @@ MonoBehaviour:
   _arm: {fileID: 4231888720586742473}
   _hand: {fileID: 4519180375597837721}
   _finger: {fileID: 1730091481}
+  _previewMeshRenderer: {fileID: 1872969993253753432}
 --- !u!82 &919132149135725059
 AudioSource:
   m_ObjectHideFlags: 0

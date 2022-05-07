@@ -162,11 +162,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ab4fe2cb9732c7e4a855e6891448565b, type: 3}
   m_PrefabInstance: {fileID: 1706909324}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &177037802 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1872969993253753432, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
-  m_PrefabInstance: {fileID: 7633574278446328391}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &181973120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2050,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3e960403229fcc54d901172e92f3a6ae, type: 2}
   - {fileID: 2100000, guid: cd1d44659e0905e419f0bea966494daf, type: 2}
   _baseSpawnCount: 4
+  _ids: []
 --- !u!1 &6015690715737088556
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,30 +2247,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452215064}
     m_Modifications:
-    - target: {fileID: 1730091481, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.0162
-      objectReference: {fileID: 0}
-    - target: {fileID: 1730091481, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0367
-      objectReference: {fileID: 0}
-    - target: {fileID: 1730091481, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.1808
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149135725058, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
-      propertyPath: _previewMeshRenderer
-      value: 
-      objectReference: {fileID: 177037802}
-    - target: {fileID: 1872969993253753432, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1872969993253753432, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: -5836581883062161383, guid: 776b084884850274abed841175729be1, type: 3}
     - target: {fileID: 7290921584137238598, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
       propertyPath: m_Name
       value: roboticPippetteArm
