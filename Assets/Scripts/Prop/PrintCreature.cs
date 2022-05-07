@@ -21,12 +21,12 @@ namespace GamedevGBG.Prop
             GameObject targetGo = null;
             if (torsos.Any())
             {
-                var target = torsos[Random.Range(0, torsos.Length)];
+                var target = torsos[0];
                 targetGo = Instantiate(target.Prefab, _spawnPoint.position, Quaternion.identity);
                 var targetGoTorso = targetGo.GetComponent<Torso>();
                 if (heads.Any())
                 {
-                    var targetHead = heads[Random.Range(0, heads.Length)];
+                    var targetHead = heads[0];
                     var targetEnabl = targetHead.Animal switch
                     {
                         AnimalType.Cat => targetGoTorso.CatHead,
@@ -56,7 +56,7 @@ namespace GamedevGBG.Prop
                 }
                 if (tails.Any())
                 {
-                    var targetTail = tails[Random.Range(0, tails.Length)];
+                    var targetTail = tails[0];
                     (targetTail.Animal switch
                     {
                         AnimalType.Cat => targetGoTorso.CatTail,
@@ -68,7 +68,7 @@ namespace GamedevGBG.Prop
             }
             else if (heads.Any())
             {
-                var targetHead = heads[Random.Range(0, heads.Length)];
+                var targetHead = heads[0];
                 targetGo = Instantiate(targetHead.Prefab, _spawnPoint.position, Quaternion.identity);
                 var targetGoHead = targetGo.GetComponent<Head>();
                 if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Cupcake))
