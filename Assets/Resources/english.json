@@ -5,5 +5,12 @@
     "french": "French",
     "german": "German",
     "dutch": "Dutch",
-    "spanish": "Spanish"
+    "spanish": "Spanish",
+
+    "developer": "Developer",
+    "3D artist": "3D Artist",
+    "sound designer": "Sound Designer",
+    "scientist and gamedesign": "Scientist and Game Design",
+    "dutch translation": "Dutch Translation",
+    "spanish and german translation": "Spanish and German translation"
 }
