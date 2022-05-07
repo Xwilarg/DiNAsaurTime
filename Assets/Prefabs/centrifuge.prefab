@@ -350,6 +350,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8873266059867547384}
   - component: {fileID: 8984282157063714575}
+  - component: {fileID: 919132147857276443}
+  - component: {fileID: 919132147857276445}
+  - component: {fileID: 919132147857276444}
   m_Layer: 0
   m_Name: centrifuge
   m_TagString: Untagged
@@ -364,7 +367,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8101972244766342210}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.000003010034}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -1.4679077, y: 0.99391305, z: -9.978228}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -398,3 +401,46 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &919132147857276443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101972244766342210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28967273, y: 0.1580025, z: 0.2917107}
+  m_Center: {x: 0.00065761805, y: 0.08318704, z: 0.14124061}
+--- !u!65 &919132147857276445
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101972244766342210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28967273, y: 0.1580025, z: 0.2917107}
+  m_Center: {x: 0.00065761805, y: 0.08318704, z: 0.14124061}
+--- !u!114 &919132147857276444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101972244766342210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68975df905556c24f8adcc32869ea783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slots:
+  - {fileID: 4187080178361358920}
+  - {fileID: 3647922331610895738}
+  - {fileID: 8391383305427915591}
+  - {fileID: 3689643184167181497}
