@@ -33,6 +33,10 @@ namespace GamedevGBG.Menu
             {
                 Translate.Instance.CurrentLanguage = "german";
             }
+            else if (key == "SECRET")
+            {
+                SceneManager.LoadScene("Secret");
+            }
             else
             {
                 throw new NotImplementedException($"Unknown key {key}");
