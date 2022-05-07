@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3cfaf5873d544a8458fff535db60488c, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -194,10 +194,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 163.152
       objectReference: {fileID: 0}
+    - target: {fileID: 7760578189107739123, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6878852016334433465, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     - target: {fileID: 8029772856662578391, guid: 27501742d211c384c89244124f109de8, type: 3}
       propertyPath: m_Name
       value: vialLargeHolder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8090977756107037847, guid: 27501742d211c384c89244124f109de8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5340021565646300856, guid: 471cdc3d233b4df478922ef3338e8bad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27501742d211c384c89244124f109de8, type: 3}
 --- !u!1001 &447042347
@@ -264,6 +272,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onDone
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f3d2e2b677849443ab16e716ce458f1, type: 3}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onDoing
+      value: 
+      objectReference: {fileID: 8300000, guid: cd107bd7feef6bc44a3dca3d32b810ca, type: 3}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _timeUntilCompletion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
       propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.size
       value: 1
