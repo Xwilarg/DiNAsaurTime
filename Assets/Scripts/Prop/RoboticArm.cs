@@ -79,7 +79,7 @@ namespace GamedevGBG.Prop
                 &&
                 (
                 (_targetIndex < _inputs.TargetCount && !_inputs.IsEmpty(_targetIndex) && _propLoaded == null) ||
-                (_targetIndex >= _inputs.TargetCount && !_outputs.IsEmpty(_targetIndex - _inputs.TargetCount) && _propLoaded != null && _outputs.GetPropInfo(_targetIndex - _inputs.TargetCount).Inside.Count < 3)
+                (_targetIndex >= _inputs.TargetCount && !_outputs.IsEmpty(_targetIndex - _inputs.TargetCount) && _propLoaded != null && _outputs.GetPropInfo(_targetIndex - _inputs.TargetCount).Inside.Count < 4)
                 ))
             {
                 _currentAction = ActionState.GoDown;
