@@ -42,7 +42,7 @@ namespace GamedevGBG.Prop
 
         public override int TargetCount => _slots.Length;
 
-        private void Awake()
+        private void Start()
         {
             _anim = GetComponent<Animator>();
             _source = GetComponent<AudioSource>();
