@@ -1781,17 +1781,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f0741e57e1d0bdb438468a1b3a2eaddf, type: 3}
   m_PrefabInstance: {fileID: 1759894740}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1832031181 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7633574279168702858, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
-  m_PrefabInstance: {fileID: 7633574278446328391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68975df905556c24f8adcc32869ea783, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2036187858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2000,17 +1989,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7954867816288101116, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
   m_PrefabInstance: {fileID: 7633574278446328391}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &919132148392792925 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
-  m_PrefabInstance: {fileID: 6671503252572143591}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68975df905556c24f8adcc32869ea783, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &919132149135725058 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 919132149135725058, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
@@ -2044,10 +2022,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2096340788390946113, guid: bc26e77d209b2d641bdfeed343a4a0f2, type: 3}
-      propertyPath: _frontOffset
-      value: -10.1
-      objectReference: {fileID: 0}
     - target: {fileID: 2096340788390946114, guid: bc26e77d209b2d641bdfeed343a4a0f2, type: 3}
       propertyPath: _arm
       value: 
@@ -2056,14 +2030,6 @@ PrefabInstance:
       propertyPath: _calculator
       value: 
       objectReference: {fileID: 3469287836968780450}
-    - target: {fileID: 2096340788390946114, guid: bc26e77d209b2d641bdfeed343a4a0f2, type: 3}
-      propertyPath: _machines.Array.data[0]
-      value: 
-      objectReference: {fileID: 919132148392792925}
-    - target: {fileID: 2096340788390946114, guid: bc26e77d209b2d641bdfeed343a4a0f2, type: 3}
-      propertyPath: _machines.Array.data[1]
-      value: 
-      objectReference: {fileID: 1832031181}
     - target: {fileID: 2096340788390946142, guid: bc26e77d209b2d641bdfeed343a4a0f2, type: 3}
       propertyPath: m_Name
       value: GameManager

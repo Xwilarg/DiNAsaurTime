@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _grab: {fileID: 8300000, guid: 5f9a3617244dbe14398dd0aef28ab42d, type: 3}
   _drop: {fileID: 8300000, guid: ed71281ae6a7fe04aaa0486f65fae79e, type: 3}
+  _frontOffset: -10.1
 --- !u!114 &2096340788390946112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,9 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d33eae86d73554693224b9eddebc9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _machines:
-  - {fileID: 0}
-  - {fileID: 0}
   _calculator: {fileID: 0}
   _arm: {fileID: 0}
 --- !u!82 &2096340788390946115
