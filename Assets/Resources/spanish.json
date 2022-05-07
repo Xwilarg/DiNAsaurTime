@@ -5,5 +5,27 @@
     "french": "Francés",
     "german": "Alemán",
     "dutch": "Holandés",
-    "spanish": "Español"
+    "spanish": "Español",
+    "customText": "TextoPersonalizado",
+
+    "developer": "Desarrollador",
+    "3D artist": "Artista 3D",
+    "sound designer": "Diseñador de Sonido",
+    "scientist and gamedesign": "Científico y Diseñador de Juego",
+    "dutch translation": "Traducción Holandesa",
+    "spanish and german translation": "Traducción Española y Alemana",
+
+    "out of order": "Fuera de Servicio",
+    "call mom": "Llamar a Mamá",
+    "its okay": "No te preocupes.",
+
+    "synthesis complete": "Síntesis Completa",
+
+    "tuto intro 1": "Nota de laboratorio: Clonar Dinosaurios",
+    "tuto intro 2": "Quiero una mascota…",
+    "tuto intro 3": "Recientemente conseguí unos plásmidos con ADN que puedo usar para crear un dinosaurio… o al menos intentarlo.",
+    "tuto intro 4": "Protocolo:",
+    "tuto intro 5": "1) Mezcla 3-4 frascos de plásmido usando el robot de pipeteo.",
+    "tuto intro 6": "2) Ensámblalos con la máquina de PCR.",
+    "tuto intro 7": "3) Mételos en la impresora 3D?"
 }

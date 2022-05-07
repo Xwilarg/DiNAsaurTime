@@ -6,5 +6,26 @@
     "german": "Deutsch",
     "dutch": "Holländisch",
     "spanish": "Spanisch",
-    "customText": "Die Deutschen scherzen nicht"
+    "customText": "PersonalisierterText",
+
+    "developer": "Entwickler",
+    "3D artist": "3D Künstler",
+    "sound designer": "Sounddesigner",
+    "scientist and gamedesign": "Wissenschaftler und Spieldesigner",
+    "dutch translation": "Holländisch Übersetzung",
+    "spanish and german translation": "Deutsche und Spanische Übersetzung",
+
+    "out of order": "Außer Betrieb",
+    "call mom": "Mama anrufen",
+    "its okay": "Es ist okay.",
+
+    "synthesis complete": "Synthese abgeschlossen",
+
+    "tuto intro 1": "Labornotiz: Dino Klonung",
+    "tuto intro 2": "Ich möchte so gerne ein Haustier haben…",
+    "tuto intro 3": "Vor kurzem habe ich ein paar Plasmide erhalten mit DNA die ich nutzen kann um einen Dinosaurier zu erschaffen, oder es zu versuchen.",
+    "tuto intro 4": "Protokoll:",
+    "tuto intro 5": "1) Mische 3-4 Plasmidphiolen zusammen mit dem Pipettierroboter.",
+    "tuto intro 6": "2) Füge sie zusammen mit der PCR-Maschine",
+    "tuto intro 7": "3) Stecke sie in den 3D Drucker?"
 }
