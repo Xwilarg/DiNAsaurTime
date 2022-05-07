@@ -27,6 +27,8 @@ namespace GamedevGBG.Prop
         private float _objValue;
         private float _actionTimer;
 
+        private AudioSource _movementAudio;
+
         private enum ActionState
         {
             GoDown,
@@ -37,6 +39,7 @@ namespace GamedevGBG.Prop
 
         private void Start()
         {
+            _movementAudio = GetComponent<AudioSource>();
             _targetIndex = _vialsDeposit.TargetCount;
             _oldIndex = _targetIndex - 1;
             _oldDist = float.PositiveInfinity;
@@ -70,6 +73,7 @@ namespace GamedevGBG.Prop
             {
                 _currentAction = ActionState.GoDown;
                 _actionTimer = 0f;
+                _movementAudio.Play();
             }
         }
 
@@ -90,11 +94,19 @@ namespace GamedevGBG.Prop
             {
                 _oldDist = dist;
                 _arm.transform.position += _arm.transform.right * (_targetIndex > _oldIndex ? 1f : -1f) * _speed * Time.deltaTime;
-                _isMoving = true;
+                if (!_isMoving)
+                {
+                    _isMoving = true;
+                    _movementAudio.Play();
+                }
             }
             else
             {
-                _isMoving = false;
+                if (_isMoving)
+                {
+                    _isMoving = false;
+                    _movementAudio.Stop();
+                }
             }
 
             if (_currentAction == ActionState.GoDown)
@@ -123,6 +135,7 @@ namespace GamedevGBG.Prop
                 {
                     _actionTimer = 0f;
                     _currentAction = ActionState.Done;
+                    _movementAudio.Stop();
                 }
             }
         }

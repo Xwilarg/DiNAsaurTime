@@ -13,11 +13,17 @@ namespace GamedevGBG.Prop
 
         private bool _isBroken;
 
+        private AudioSource _source;
+
         [SerializeField]
         private TMP_Text _result;
 
+        [SerializeField]
+        private AudioClip _bip, _explode;
+
         private void Start()
         {
+            _source = GetComponent<AudioSource>();
             CultureInfo customCulture = (CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
             customCulture.NumberFormat.NumberDecimalSeparator = ".";
             Thread.CurrentThread.CurrentCulture = customCulture;
@@ -47,6 +53,7 @@ namespace GamedevGBG.Prop
                         var rb = GetComponent<Rigidbody>();
                         rb.AddForce((Vector3.up + Vector3.right * Random.Range(-.25f, .25f)) * 10f, ForceMode.Impulse);
                         rb.AddTorque(Random.rotation.eulerAngles, ForceMode.Impulse);
+                        _source.PlayOneShot(_explode);
                         return;
                     }
                     else
@@ -72,6 +79,7 @@ namespace GamedevGBG.Prop
             {
                 return;
             }
+            _source.PlayOneShot(_bip);
             if (nb == '.')
             {
                 if (!_number.Contains("."))

@@ -24,6 +24,11 @@ namespace GamedevGBG.Prop
         [SerializeField]
         private PropType _allowedType;
 
+        [SerializeField]
+        private AudioClip _onDoing, _onDone;
+
+        private AudioSource _source;
+
         private Animator _anim;
 
         private float _timer = -1f;
@@ -33,6 +38,7 @@ namespace GamedevGBG.Prop
         private void Awake()
         {
             _anim = GetComponent<Animator>();
+            _source = GetComponent<AudioSource>();
             Init();
         }
 
@@ -48,6 +54,12 @@ namespace GamedevGBG.Prop
         private IEnumerator WaitAndProcess()
         {
             yield return new WaitForSeconds(1f);
+            if (_source != null && _onDoing != null)
+            {
+                _source.clip = _onDoing;
+                _source.loop = true;
+                _source.Play();
+            }
             _timer = _info.ProcessTime;
         }
 
@@ -69,6 +81,13 @@ namespace GamedevGBG.Prop
                     _targets = new GameObject[_slots.Length];
                     _progression.text = string.Empty;
                     _anim.SetBool("IsOpen", true);
+                    _source.Stop();
+                    if (_source != null && _onDone != null)
+                    {
+                        _source.clip = _onDone;
+                        _source.loop = false;
+                        _source.Play();
+                    }
                 }
             }
         }
