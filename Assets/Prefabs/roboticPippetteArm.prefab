@@ -160,9 +160,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _info: {fileID: 0}
-  _slots: []
+  _slots:
+  - {fileID: 4880881565913270574}
+  - {fileID: 1256663066936447784}
+  - {fileID: 6479101200499081695}
+  - {fileID: 3066447307574542937}
   _progression: {fileID: 0}
   _processOnDone: 0
+  _allowedType: 1
 --- !u!1 &1352401867276190505
 GameObject:
   m_ObjectHideFlags: 0

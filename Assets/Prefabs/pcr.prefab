@@ -430,6 +430,7 @@ MonoBehaviour:
   - {fileID: 703614429146380094}
   _progression: {fileID: 296479248}
   _processOnDone: 1
+  _allowedType: 1
 --- !u!65 &919132148392792926
 BoxCollider:
   m_ObjectHideFlags: 0
