@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace GamedevGBG.Prop
 {
@@ -12,6 +13,9 @@ namespace GamedevGBG.Prop
         [SerializeField]
         private Material[] _mats;
 
+        [SerializeField]
+        private int _baseSpawnCount;
+
         public override int TargetCount =>_slots.Length;
 
         public override Vector3 GetPosition(int index)
@@ -22,13 +26,16 @@ namespace GamedevGBG.Prop
         private void Start()
         {
             Init();
-            foreach (var s in _slots)
+            for (int i = 0; i < _baseSpawnCount; i++)
             {
-                var go = Instantiate(_prefab, s.transform.position, _prefab.transform.rotation);
-                var mesh = go.GetComponent<MeshRenderer>();
-                Material[] matArray = mesh.materials;
-                matArray[1] = _mats[Random.Range(0, _mats.Length)];
-                mesh.materials = matArray;
+                var go = Instantiate(_prefab, Vector3.zero, _prefab.transform.rotation);
+                if (_mats.Any())
+                {
+                    var mesh = go.GetComponent<MeshRenderer>();
+                    Material[] matArray = mesh.materials;
+                    matArray[1] = _mats[Random.Range(0, _mats.Length)];
+                    mesh.materials = matArray;
+                }
                 Add(go);
             }
         }
