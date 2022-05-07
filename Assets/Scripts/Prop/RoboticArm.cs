@@ -5,10 +5,7 @@ namespace GamedevGBG.Prop
     public class RoboticArm : MonoBehaviour
     {
         [SerializeField]
-        private Machine _vialsDeposit;
-
-        [SerializeField]
-        private Transform _targetObject;
+        private AContainer _inputs, _outputs;
 
         [SerializeField]
         private float _speed;
@@ -40,7 +37,7 @@ namespace GamedevGBG.Prop
         private void Start()
         {
             _movementAudio = GetComponent<AudioSource>();
-            _targetIndex = _vialsDeposit.TargetCount;
+            _targetIndex = _inputs.TargetCount;
             _oldIndex = _targetIndex - 1;
             _oldDist = float.PositiveInfinity;
             _baseValue = _arm.transform.position.y;
@@ -59,7 +56,7 @@ namespace GamedevGBG.Prop
 
         public void GoRight()
         {
-            if (_targetIndex <_vialsDeposit.TargetCount && _currentAction == ActionState.Done)
+            if (_targetIndex < _inputs.TargetCount + _outputs.TargetCount - 1 && _currentAction == ActionState.Done)
             {
                 _oldIndex = _targetIndex;
                 _targetIndex++;
@@ -79,11 +76,11 @@ namespace GamedevGBG.Prop
 
         private Vector3 GetPosition(int index)
         {
-            if (index < _vialsDeposit.TargetCount)
+            if (index < _inputs.TargetCount)
             {
-                return _vialsDeposit.GetPosition(index);
+                return _inputs.GetPosition(index);
             }
-            return _targetObject.position;
+            return _outputs.GetPosition(index - _inputs.TargetCount);
         }
 
         private void Update()
@@ -109,6 +106,7 @@ namespace GamedevGBG.Prop
                 }
             }
 
+            // Moving the arm up then down
             if (_currentAction == ActionState.GoDown)
             {
                 _actionTimer += Time.deltaTime;

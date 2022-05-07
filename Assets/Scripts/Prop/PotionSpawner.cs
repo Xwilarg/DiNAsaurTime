@@ -16,7 +16,7 @@ namespace GamedevGBG.Prop
         [SerializeField]
         private int _baseSpawnCount;
 
-        public override int TargetCount =>_slots.Length;
+        public override int TargetCount => _slots.Length;
 
         public override Vector3 GetPosition(int index)
         {
@@ -38,6 +38,11 @@ namespace GamedevGBG.Prop
                 }
                 Add(go);
             }
+        }
+
+        public override void Remove(GameObject go)
+        {
+            base.Remove(go);
         }
     }
 }

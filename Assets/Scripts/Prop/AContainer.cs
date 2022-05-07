@@ -17,7 +17,7 @@ namespace GamedevGBG.Prop
             _targets = new GameObject[TargetCount];
         }
 
-        public void Remove(GameObject go)
+        public virtual void Remove(GameObject go)
         {
             for (int i = 0; i < _targets.Length; i++)
             {
