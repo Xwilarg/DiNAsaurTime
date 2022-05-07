@@ -5,5 +5,15 @@
     "french": "Français",
     "german": "Allemand",
     "dutch": "Néerlandais",
-    "spanish": "Espagnol"
+    "spanish": "Espagnol",
+
+    "developer": "Developeur",
+    "3D artist": "Artist 3D",
+    "sound designer": "Sound Designer",
+    "scientist and gamedesign": "Scientifique et Game Design",
+    "dutch translation": "Traduction néerlandaise",
+    "spanish and german translation": "Traductions espagnol et allemande",
+
+    "out of order": "Hors service",
+    "call mom": "Appeler maman"
 }
