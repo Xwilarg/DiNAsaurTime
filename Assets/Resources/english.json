@@ -18,5 +18,13 @@
     "out of order": "Out of Order",
     "call mom": "Call mom",
 
-    "synthesis complete": "Synthesis Complete"
+    "synthesis complete": "Synthesis Complete",
+
+    "tuto intro 1": "Lab Notebook: Dino clonning",
+    "tuto intro 2": "Man I really need a pet...",
+    "tuto intro 3": "I got some plasmids recently, plasmids have DNA that I can use to create a dinosaur. Or try.",
+    "tuto intro 4": "Protocol:",
+    "tuto intro 5": "1) Mix 3-4 plasmid vials together using the pipeting robot",
+    "tuto intro 6": "2) Assemble them in the PCR machine",
+    "tuto intro 7": "3) Throw them into the 3D printer?"
 }
