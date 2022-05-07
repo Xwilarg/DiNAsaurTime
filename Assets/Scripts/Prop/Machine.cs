@@ -1,6 +1,5 @@
 ﻿using GamedevGBG.Player;
 using GamedevGBG.SO;
-using System;
 using System.Collections;
 using System.Linq;
 using TMPro;
@@ -8,7 +7,7 @@ using UnityEngine;
 
 namespace GamedevGBG.Prop
 {
-    public class Machine : MonoBehaviour
+    public class Machine : AContainer
     {
         [SerializeField]
         private MachineInfo _info;
@@ -22,51 +21,27 @@ namespace GamedevGBG.Prop
         [SerializeField]
         private bool _processOnDone;
 
+        [SerializeField]
+        private PropType _allowedType;
+
         private Animator _anim;
 
         private float _timer = -1f;
-        private GameObject[] _targets;
 
-        public int SlotCount => _slots.Length;
-
-        public Vector3 GetSlotPosition(int index)
-        {
-            return _slots[index].position;
-        }
+        public override int TargetCount => _slots.Length;
 
         private void Awake()
         {
             _anim = GetComponent<Animator>();
-            _targets = new GameObject[_slots.Length];
-        }
-
-        public void Remove(GameObject go)
-        {
-            for (int i = 0; i < _targets.Length; i++)
-            {
-                var t = _targets[i];
-                if (t != null && t.GetInstanceID() == go.GetInstanceID())
-                {
-                    _targets[i] = null;
-                    break;
-                }
-            }
+            Init();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             // Make sure that the object isn't already there and that there is empty space
-            if (other.CompareTag("Draggable") && !_targets.Any(x => x != null && x.GetInstanceID() == other.gameObject.GetInstanceID()) && _targets.Any(x => x == null))
+            if (other.CompareTag("Draggable") && other.GetComponent<PropInfo>().Type == _allowedType)
             {
-                var index = Array.IndexOf(_targets, null);
-                other.transform.position = _slots[index].position;
-                _targets[index] = other.gameObject;
-                DragAndDrop.Instance.Drop();
-                if (!_targets.Any(x => x == null) && _processOnDone) // All emplacement full
-                {
-                    _anim.SetBool("IsOpen", false);
-                    StartCoroutine(WaitAndProcess());
-                }
+                Add(other.gameObject);
             }
         }
 
@@ -95,6 +70,22 @@ namespace GamedevGBG.Prop
                     _progression.text = string.Empty;
                     _anim.SetBool("IsOpen", true);
                 }
+            }
+        }
+
+        public override Vector3 GetPosition(int index)
+        {
+            return _slots[index].position;
+        }
+
+        public override void Add(GameObject go)
+        {
+            base.Add(go);
+            DragAndDrop.Instance.Drop();
+            if (!_targets.Any(x => x == null) && _processOnDone) // All emplacement full
+            {
+                _anim.SetBool("IsOpen", false);
+                StartCoroutine(WaitAndProcess());
             }
         }
     }

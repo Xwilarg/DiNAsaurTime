@@ -37,7 +37,7 @@ namespace GamedevGBG.Prop
 
         private void Start()
         {
-            _targetIndex = _vialsDeposit.SlotCount;
+            _targetIndex = _vialsDeposit.TargetCount;
             _oldIndex = _targetIndex - 1;
             _oldDist = float.PositiveInfinity;
             _baseValue = _arm.transform.position.y;
@@ -56,7 +56,7 @@ namespace GamedevGBG.Prop
 
         public void GoRight()
         {
-            if (_targetIndex <_vialsDeposit.SlotCount && _currentAction == ActionState.Done)
+            if (_targetIndex <_vialsDeposit.TargetCount && _currentAction == ActionState.Done)
             {
                 _oldIndex = _targetIndex;
                 _targetIndex++;
@@ -75,9 +75,9 @@ namespace GamedevGBG.Prop
 
         private Vector3 GetPosition(int index)
         {
-            if (index < _vialsDeposit.SlotCount)
+            if (index < _vialsDeposit.TargetCount)
             {
-                return _vialsDeposit.GetSlotPosition(index);
+                return _vialsDeposit.GetPosition(index);
             }
             return _targetObject.position;
         }
