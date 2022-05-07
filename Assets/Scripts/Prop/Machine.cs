@@ -96,7 +96,7 @@ namespace GamedevGBG.Prop
                     }
                     _progression.text = endText;
                     StartCoroutine(CleanText());
-                    _onComplete?.Invoke(_targets[0].GetComponent<PropInfo>().ID);
+                    _onComplete?.Invoke(string.Join(";", _targets.Select(x => x.GetComponent<PropInfo>().ID)));
                     foreach (var t in _targets)
                     {
                         Destroy(t);

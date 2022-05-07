@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GamedevGBG.BodyPart;
+using System;
 using UnityEngine;
 
 namespace GamedevGBG.Prop
@@ -8,6 +9,8 @@ namespace GamedevGBG.Prop
     {
         public string ID;
         public Material Mat;
-        public string Description;
+        public ContentType Type;
+        public AnimalType Animal;
+        public GameObject Prefab;
     }
 }

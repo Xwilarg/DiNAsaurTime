@@ -1240,6 +1240,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.37488058, y: 0.27548927, z: 0.30236262}
   m_Center: {x: 0.049695686, y: 2.2598981e-14, z: 0.1514521}
+--- !u!114 &352615695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352615690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2426496b76b987249a16c35824457723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoint: {fileID: 2039315265}
 --- !u!1001 &363607268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5175,6 +5188,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcaa9abc8daea0741a358736c3b68ec4, type: 3}
+--- !u!1 &2039315264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2039315265}
+  m_Layer: 0
+  m_Name: Output
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2039315265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039315264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0008, y: 0.0082, z: 0.1007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 352615693}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2052584206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3ba98b8490ed5b24ab4ca1d5b1578526, type: 3}
@@ -5333,58 +5377,94 @@ MonoBehaviour:
   _info:
   - ID: Dino_Torso
     Mat: {fileID: 2100000, guid: bd0b226ae3be8aa41bf5bef30a318d2f, type: 2}
-    Description: 
+    Type: 0
+    Animal: 0
+    Prefab: {fileID: 6978149645361212654, guid: 00ad43c791947e1438771bb865666049, type: 3}
   - ID: Cat_Torso
     Mat: {fileID: 2100000, guid: 7470475d5dddc4a4cacded46ac8e4afe, type: 2}
-    Description: 
+    Type: 0
+    Animal: 1
+    Prefab: {fileID: 4357453094504722877, guid: d015f70e8ce54dd4e93e453043ab22fc, type: 3}
   - ID: Alien_Torso
     Mat: {fileID: 2100000, guid: 10fab25735798c14991320cd1d5cbe9a, type: 2}
-    Description: 
+    Type: 0
+    Animal: 2
+    Prefab: {fileID: 2526146323067144207, guid: 99de58b2526dcd142a12b05586295089, type: 3}
   - ID: Muffin
     Mat: {fileID: 2100000, guid: e473752edb7ee1a4693637156a00b856, type: 2}
-    Description: 
+    Type: 0
+    Animal: 3
+    Prefab: {fileID: 912891071017522758, guid: 1e8e83c5714518343b54747d62b59d55, type: 3}
   - ID: Cactus
     Mat: {fileID: 2100000, guid: 8dd6d7b234fbe6146a624e654f58760e, type: 2}
-    Description: 
+    Type: 0
+    Animal: 4
+    Prefab: {fileID: 2524728121981048755, guid: 9c116a927c4e3cc429d322b2669983ec, type: 3}
   - ID: Dino_Tail
     Mat: {fileID: 2100000, guid: dc53d3fdde1466f4e895228f582d5477, type: 2}
-    Description: 
+    Type: 2
+    Animal: 0
+    Prefab: {fileID: 0}
   - ID: Cat_Tail
     Mat: {fileID: 2100000, guid: 0b094cf7c0df536498ebb6f64248b72d, type: 2}
-    Description: 
+    Type: 2
+    Animal: 1
+    Prefab: {fileID: 0}
   - ID: Alien_Tail
     Mat: {fileID: 2100000, guid: 6db691385459bd540a2c02357ff2c6db, type: 2}
-    Description: 
+    Type: 2
+    Animal: 2
+    Prefab: {fileID: 0}
   - ID: Tentacle
     Mat: {fileID: 2100000, guid: c0914885ac4e4bd458e67a7fc383b515, type: 2}
-    Description: 
+    Type: 1
+    Animal: 5
+    Prefab: {fileID: 0}
   - ID: Dino_Head
     Mat: {fileID: 2100000, guid: feb50578787833e4aab1d23a8fb3cc93, type: 2}
-    Description: 
+    Type: 1
+    Animal: 0
+    Prefab: {fileID: 1300485236332261099, guid: 54df1020fd9f2974cb164eaf2daad9f5, type: 3}
   - ID: Cat_Head
     Mat: {fileID: 2100000, guid: a0b47b49950f6fa469745cf7cfa15238, type: 2}
-    Description: 
+    Type: 1
+    Animal: 1
+    Prefab: {fileID: 3091642648025148656, guid: e1daac6fbcddda74e9fbff3a5dbf6cfd, type: 3}
   - ID: Alien_Head
     Mat: {fileID: 2100000, guid: 313d0900c7e871447a7744492e29967f, type: 2}
-    Description: 
+    Type: 1
+    Animal: 2
+    Prefab: {fileID: 6296304425344722815, guid: 29749d6621c39e946817886f54b9a215, type: 3}
   - ID: Icing_top
     Mat: {fileID: 2100000, guid: 453c9e1e22ff5fe40899a411fe69cb61, type: 2}
-    Description: 
+    Type: 3
+    Animal: 3
+    Prefab: {fileID: 0}
   - ID: Fishbowl
     Mat: {fileID: 2100000, guid: e579687f294213942aa196426859e01e, type: 2}
-    Description: 
+    Type: 3
+    Animal: 6
+    Prefab: {fileID: 0}
   - ID: Green_glow
     Mat: {fileID: 2100000, guid: f3c0350a91875394f8e835d821899c5d, type: 2}
-    Description: 
+    Type: 4
+    Animal: 7
+    Prefab: {fileID: 0}
   - ID: Purple_glow
     Mat: {fileID: 2100000, guid: 87f3503ac84252e498ffd429a72c1a92, type: 2}
-    Description: 
+    Type: 4
+    Animal: 7
+    Prefab: {fileID: 0}
   - ID: Slime
     Mat: {fileID: 2100000, guid: ce76cf8fbb9674a40a24f26d31b6183f, type: 2}
-    Description: 
+    Type: 4
+    Animal: 7
+    Prefab: {fileID: 0}
   - ID: Pizza
     Mat: {fileID: 2100000, guid: daba3be5a25f0384cb15d970b6dfc588, type: 2}
-    Description: 
+    Type: 4
+    Animal: 7
+    Prefab: {fileID: 1603069461846591169, guid: 1938f7de86712744a82efce9d6079a8a, type: 3}
 --- !u!1001 &2139481484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5734,6 +5814,34 @@ PrefabInstance:
     - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
       propertyPath: _timeUntilCompletion
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352615695}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Print
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GamedevGBG.Prop.PrintCreature, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710476125753830870, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
+      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5788419705848261819, guid: 259ae1b07ace71d47992805e7255e90b, type: 3}
       propertyPath: m_Name
