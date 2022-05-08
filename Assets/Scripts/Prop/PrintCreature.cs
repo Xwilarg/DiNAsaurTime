@@ -129,7 +129,7 @@ namespace GamedevGBG.Prop
                                         targetGoHead.Topping.gameObject.SetActive(true);
                                     }
                                 }
-                                if (hats.Any(x => x.Animal == AnimalType.Fish))
+                                if (hats.Any(x => x.Animal == AnimalType.Fish) && targetHead.Animal != AnimalType.Tentacles)
                                 {
                                     sentence = Translate.Instance.Tr("bowl") + " " + sentence;
                                     targetGoHead.Bowl.gameObject.SetActive(true);
