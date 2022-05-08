@@ -1,9 +1,61 @@
 {
     "play": "Spelen",
+    "credits": "Credits",
 
     "english": "Engels",
     "french": "Frans",
     "german": "Duits",
     "dutch": "Nederlands",
-    "spanish": "Spaans"
+    "spanish": "Spaans",
+    "customText": "",
+    "thank you": "Bedankt",
+
+    "developer": "Ontwikkelaar",
+    "3D artist": "3D-artiest",
+    "sound designer": "Sound Designer",
+    "scientist and gamedesign": "Wetenschapper en gamedesign",
+    "dutch translation": "Nederlandse vertaling",
+    "spanish and german translation": "Spaanse en Duitse vertaling",
+
+    "out of order": "Buiten gebruik",
+    "call mom": "Mam bellen",
+    "its okay": "Het is okÃ©",
+    "do not bring to lab": "Niet naar het lab brengen",
+
+    "pcr use big tubes": "PCR (Gebruik grote buisjes)",
+    "mix plasmids into big tube": "Meng 1-4 plasmiden in een groot buisje",
+    "take tubes here": "Breng buisjes hier!",
+
+    "dino one": "dino",
+    "dino two": "sau",
+    "dino three": "rus",
+    "alien one": "buiten",
+    "alien two": "aards",
+    "alien three": "wezen",
+    "cat one": "ka",
+    "cat two": "t",
+    "cat three": "je",
+    "cupcake full": "cupcake",
+    "cupcake part": "cake",
+    "topping": "verrukkelijk",
+    "tentacles": "aaaAAAAA",
+    "bowl": "aquatisch",
+    "cactus full": "cactus",
+    "cactus part": "tus",
+    "pizza": "pizza",
+    "slime": "kleverig",
+    "green": "groen",
+    "lavender": "lavendel",
+    "purple": "paars",
+
+    "synthesis completed": "Synthese voltooid",
+    "synthesis failed": "Synthese gefaald",
+
+    "tuto intro 1": "Lab Notitieboek: Dino clonen",
+    "tuto intro 2": "Man ik heb echt een huisdier nodig...",
+    "tuto intro 3": "Ik heb recent wat plasmiden gekregen, plasmiden hebben DNA dat ik kan gebruiken om een dinosaurus te maken. Of proberen.",
+    "tuto intro 4": "Protocol:",
+    "tuto intro 5": "1) Mix 4 plasmide buisjes samen met behulp van de pipetteerrobot",
+    "tuto intro 6": "2) Monteer ze in de PCR-machine",
+    "tuto intro 7": "3) Gooi ze in de 3D printer?"
 }
