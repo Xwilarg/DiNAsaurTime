@@ -159,7 +159,7 @@ namespace GamedevGBG.Prop
                 {
                     sentence = Translate.Instance.Tr("lavender") + " " + sentence;
                     var light = targetGo.AddComponent<Light>();
-                    light.color = new Color(.45f, .95f, .5f);
+                    light.color = new Color(.25f, .5f, .25f);
                 }
                 else if (others.Any(x => x.ID == "Green_glow"))
                 {
@@ -171,7 +171,7 @@ namespace GamedevGBG.Prop
                 {
                     sentence = Translate.Instance.Tr("purple") + " " + sentence;
                     var light = targetGo.AddComponent<Light>();
-                    light.color = new Color(.9f, .9f, 1f);
+                    light.color = new Color(.5f, 0f, 5f);
                 }
                 if (others.Any(x => x.ID == "Slime"))
                 {

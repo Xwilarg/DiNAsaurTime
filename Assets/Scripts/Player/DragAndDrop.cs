@@ -75,6 +75,7 @@ namespace GamedevGBG.Player
             {
                 _dragTarget.GetComponent<Rigidbody>().isKinematic = false;
                 _dragTarget.GetComponent<Rigidbody>().AddForce((_dragTarget.position - _lastFramePos) * 20f, ForceMode.Impulse);
+                _dragTarget.GetComponent<Rigidbody>().AddTorque((_dragTarget.position - _lastFramePos).normalized, ForceMode.Impulse);
                 Drop();
             }
         }
