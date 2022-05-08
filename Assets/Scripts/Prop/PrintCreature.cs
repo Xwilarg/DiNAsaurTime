@@ -18,6 +18,16 @@ namespace GamedevGBG.Prop
         [SerializeField]
         private GameObject[] _stickers;
 
+        private AudioSource _source;
+
+        [SerializeField]
+        private AudioClip[] _clips;
+
+        private void Start()
+        {
+            _source = GetComponent<AudioSource>();
+        }
+
         public void Print(string key)
         {
             int reqSteps = 3;
@@ -173,6 +183,10 @@ namespace GamedevGBG.Prop
                                 AnimalType.Tentacles => Translate.Instance.Tr("tentacles"),
                                 _ => "???"
                             };
+                            if (targetHead.Animal == AnimalType.Dino)
+                            {
+                                reqSteps--;
+                            }
                             if (hats.Any(x => x.Animal == AnimalType.Cupcake))
                             {
                                 sentence = Translate.Instance.Tr("topping") + " " + sentence;
@@ -234,10 +248,12 @@ namespace GamedevGBG.Prop
                         go.SetActive(true);
                     }
                 }
+                _source.PlayOneShot(_clips[reqSteps]);
             }
             else
             {
                 _pcr.SetText(Translate.Instance.Tr("synthesis failed"));
+                _source.PlayOneShot(_clips[4]);
             }
             _pcr.NextText = sentence;
         }
