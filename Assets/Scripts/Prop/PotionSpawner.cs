@@ -88,7 +88,8 @@ namespace GamedevGBG.Prop
         private IEnumerator WaitAndRespawn(int index)
         {
             yield return new WaitForSeconds(5f);
-            SpawnAndAdd(index);
+            var go = SpawnAndAdd(index);
+            go.GetComponent<PropInfo>().ID = _ids[index];
         }
     }
 }
