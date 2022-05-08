@@ -112,8 +112,19 @@ namespace GamedevGBG.Prop
                             var targetGoHead = targetEnabl.GetComponent<Head>();
                             if (hats.Any(x => x.Animal == AnimalType.Cupcake))
                             {
-                                sentence = Translate.Instance.Tr("topping") + " " + sentence;
-                                targetGoHead.Topping.gameObject.SetActive(true);
+                                if (targetHead.Animal == AnimalType.Tentacles)
+                                {
+                                    if (target.Animal == AnimalType.Cactus)
+                                    {
+                                        sentence = Translate.Instance.Tr("topping") + " " + sentence;
+                                        targetGoTorso.Topping.gameObject.SetActive(true);
+                                    }
+                                }
+                                else
+                                {
+                                    sentence = Translate.Instance.Tr("topping") + " " + sentence;
+                                    targetGoHead.Topping.gameObject.SetActive(true);
+                                }
                             }
                             if (hats.Any(x => x.Animal == AnimalType.Fish))
                             {
