@@ -34,6 +34,9 @@ namespace GamedevGBG.Prop
         [SerializeField]
         private UnityEvent<string> _onComplete;
 
+        [SerializeField]
+        private Vector3 _storageRot;
+
         private AudioSource _source;
 
         private Animator _anim;
@@ -57,6 +60,7 @@ namespace GamedevGBG.Prop
             if (other.CompareTag("Draggable") && other.GetComponent<PropInfo>().Type == _allowedType)
             {
                 Add(other.gameObject);
+                other.gameObject.transform.rotation = Quaternion.Euler(_storageRot);
             }
         }
 

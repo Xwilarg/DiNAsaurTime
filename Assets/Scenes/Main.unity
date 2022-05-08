@@ -2045,10 +2045,11 @@ MonoBehaviour:
   - {fileID: 1534367260017118566}
   _prefab: {fileID: 4283490144233702504, guid: 0904f658d5a371647ad61219e4dbcf7c, type: 3}
   _mats:
-  - {fileID: 2100000, guid: 04bd1c1897e191b43b209ab0b3972303, type: 2}
-  - {fileID: 2100000, guid: e6d18fc8210e84a489b3f8782fcb413e, type: 2}
-  - {fileID: 2100000, guid: 3e960403229fcc54d901172e92f3a6ae, type: 2}
-  - {fileID: 2100000, guid: cd1d44659e0905e419f0bea966494daf, type: 2}
+  - Mats: []
+  - Mats: []
+  - Mats: []
+  - Mats: []
+  _randomMat: 0
   _baseSpawnCount: 4
   _ids: []
 --- !u!1 &6015690715737088556

@@ -226,14 +226,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698146278539447247}
-  m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
-  m_LocalPosition: {x: 0.0285, y: 0.1261, z: -0.0632}
+  m_LocalRotation: {x: 1.8189892e-12, y: 0.9914449, z: -0.13052616, w: -1.1706192e-12}
+  m_LocalPosition: {x: 0.025, y: 0.0349, z: -0.0277}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6566047738696611329}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -195, y: 0, z: 180}
 --- !u!1 &1411773294043682886
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,14 +426,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68975df905556c24f8adcc32869ea783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _info: {fileID: 11400000, guid: 8d25ec9c7d1779847aa2a4abcd83a67a, type: 2}
+  _timeUntilCompletion: 1
   _slots:
   - {fileID: 703614429146380094}
   _progression: {fileID: 296479248}
+  _endText: 
   _processOnDone: 1
   _allowedType: 1
-  _onDoing: {fileID: 0}
-  _onDone: {fileID: 0}
+  _onDoing: {fileID: 8300000, guid: cd107bd7feef6bc44a3dca3d32b810ca, type: 3}
+  _onDone: {fileID: 8300000, guid: 4f3d2e2b677849443ab16e716ce458f1, type: 3}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GamedevGBG.Menu.MainMenu, Assembly-CSharp
+        m_MethodName: Process
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _storageRot: {x: -90, y: 0, z: 0}
 --- !u!65 &919132148392792926
 BoxCollider:
   m_ObjectHideFlags: 0
