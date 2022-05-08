@@ -67,7 +67,6 @@ namespace GamedevGBG.Translation
                 foreach (var tt in UnityEngine.Object.FindObjectsOfType<TMP_TextTranslate>())
                 {
                     tt.UpdateText();
-                    Debug.Log(value);
                 }
             }
             get => _currentLanguage;

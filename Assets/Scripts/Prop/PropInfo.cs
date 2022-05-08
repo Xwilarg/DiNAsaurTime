@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GamedevGBG.Prop
 {
@@ -13,6 +14,10 @@ namespace GamedevGBG.Prop
 
         public bool CanBeUsed(PropType allowedType)
         {
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                return true;
+            }
             if (Type != allowedType)
             {
                 return false;
