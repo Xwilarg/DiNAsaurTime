@@ -193,7 +193,7 @@ namespace GamedevGBG.Prop
 
         private void Update()
         {
-            _spawnPoint.Rotate(new Vector3(0f, 0f, Time.deltaTime * 5f));
+            _spawnPoint.Rotate(new Vector3(0f, 0f, Time.deltaTime * 25f));
         }
     }
 }
