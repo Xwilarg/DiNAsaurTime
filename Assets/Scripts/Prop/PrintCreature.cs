@@ -100,9 +100,9 @@ namespace GamedevGBG.Prop
                         {
                             sentence = targetHead.Animal switch
                             {
-                                AnimalType.Cat => Translate.Instance.Tr("cat three"),
-                                AnimalType.Alien => Translate.Instance.Tr("alien three"),
-                                AnimalType.Dino => Translate.Instance.Tr("dino three"),
+                                AnimalType.Cat => Translate.Instance.Tr("cat one"),
+                                AnimalType.Alien => Translate.Instance.Tr("alien one"),
+                                AnimalType.Dino => Translate.Instance.Tr("dino one"),
                                 AnimalType.Tentacles => Translate.Instance.Tr("tentacles"),
                                 _ => "???"
                             } + sentence;
@@ -178,7 +178,6 @@ namespace GamedevGBG.Prop
                     sentence = Translate.Instance.Tr("slime") + " " + sentence;
                 }
 
-                targetGo.AddComponent<Rigidbody>();
                 targetGo.transform.Rotate(new Vector3(-90f, 0f, 0f));
                 targetGo.transform.localScale = Vector3.one * 2f;
                 targetGo.transform.parent = _spawnPoint.transform;
@@ -194,7 +193,7 @@ namespace GamedevGBG.Prop
 
         private void Update()
         {
-            _spawnPoint.Rotate(new Vector3(0f, 0f, Time.deltaTime));
+            _spawnPoint.Rotate(new Vector3(0f, 0f, Time.deltaTime * 5f));
         }
     }
 }
