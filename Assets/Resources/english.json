@@ -19,9 +19,9 @@
     "call mom": "Call mom",
     "its okay": "It's okay",
 
-    "dinosaur one": "di",
-    "dinosaur two": "no",
-    "dinosaur three": "saur",
+    "dino one": "di",
+    "dino two": "no",
+    "dino three": "saur",
     "alien one": "a",
     "alien two": "li",
     "alien three": "en",
@@ -41,6 +41,7 @@
     "purple": "purple",
 
     "synthesis completed": "Synthesis Completed",
+    "synthesis failed": "Synthesis Failed",
 
     "tuto intro 1": "Lab Notebook: Dino cloning",
     "tuto intro 2": "Man I really need a pet...",

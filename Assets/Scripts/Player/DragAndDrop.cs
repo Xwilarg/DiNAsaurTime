@@ -60,7 +60,7 @@ namespace GamedevGBG.Player
                 var ray = _camera.ScreenPointToRay(_mousePos);
                 if (Physics.Raycast(ray, out RaycastHit hit, float.PositiveInfinity))
                 {
-                    Debug.Log($"Click detected on {hit.collider.name}");
+                    // Debug.Log($"Click detected on {hit.collider.name}");
                     if (hit.collider.CompareTag("Draggable"))
                     {
                         MachineManager.Instance.RemoveFromMachine(hit.collider.gameObject);

@@ -114,6 +114,11 @@ namespace GamedevGBG.Prop
             _progression.text = NextText;
         }
 
+        public void SetText(string text)
+        {
+            _progression.text = text;
+        }
+
         public override Vector3 GetPosition(int index)
         {
             return _slots[index].position;

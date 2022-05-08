@@ -1253,6 +1253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 2039315265}
+  _pcr: {fileID: 919132148392792925}
 --- !u!65 &352615698
 BoxCollider:
   m_ObjectHideFlags: 0

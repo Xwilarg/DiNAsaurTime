@@ -15,6 +15,8 @@ namespace GamedevGBG.Prop
 
         public void Print(string key)
         {
+            Debug.Log($"Created {key}");
+
             var elems = key.Split(';').Select(x => VialManager.Instance.GetByKey(x));
 
             var torsos = elems.Where(x => x.Type == ContentType.Body).ToArray();
@@ -25,119 +27,144 @@ namespace GamedevGBG.Prop
             string sentence = "";
 
             GameObject targetGo = null;
-            if (torsos.Any())
+            if (others.Any(x => x.ID == "pizza"))
             {
-                var target = torsos[0];
-                targetGo = Instantiate(target.Prefab, _spawnPoint.position, Quaternion.identity);
-                var targetGoTorso = targetGo.GetComponent<Torso>();
-
-                sentence = target.Animal switch
+                sentence = Translate.Instance.Tr("pizza");
+                targetGo = Instantiate(others.First(x => x.ID == "pizza").Prefab, _spawnPoint.position, Quaternion.identity);
+            }
+            else
+            {
+                if (torsos.Any())
                 {
-                    AnimalType.Cat => Translate.Instance.Tr("cat two"),
-                    AnimalType.Alien => Translate.Instance.Tr("alien two"),
-                    AnimalType.Dino => Translate.Instance.Tr("dino two"),
-                    AnimalType.Cupcake => Translate.Instance.Tr("cupcake full"),
-                    AnimalType.Cactus => Translate.Instance.Tr("cactus full"),
-                    _ => "???"
-                };
+                    var target = torsos[0];
+                    targetGo = Instantiate(target.Prefab, _spawnPoint.position, Quaternion.identity);
+                    var targetGoTorso = targetGo.GetComponent<Torso>();
 
-                if (tails.Any())
-                {
-                    var targetTail = tails[0];
-                    (targetTail.Animal switch
+                    sentence = target.Animal switch
                     {
-                        AnimalType.Cat => targetGoTorso.CatTail,
-                        AnimalType.Alien => targetGoTorso.AlienTail,
-                        AnimalType.Dino => targetGoTorso.DinoTail,
-                        _ => throw new System.NotImplementedException()
-                    }).gameObject.SetActive(true);
-
-                    sentence += targetTail.Animal switch
-                    {
-                        AnimalType.Cat => Translate.Instance.Tr("cat three"),
-                        AnimalType.Alien => Translate.Instance.Tr("alien three"),
-                        AnimalType.Dino => Translate.Instance.Tr("dino three"),
+                        AnimalType.Cat => Translate.Instance.Tr("cat two"),
+                        AnimalType.Alien => Translate.Instance.Tr("alien two"),
+                        AnimalType.Dino => Translate.Instance.Tr("dino two"),
+                        AnimalType.Cupcake => Translate.Instance.Tr("cupcake full"),
+                        AnimalType.Cactus => Translate.Instance.Tr("cactus full"),
                         _ => "???"
                     };
-                }
 
-                if (heads.Any())
-                {
-                    if (target.Animal == AnimalType.Cactus) sentence = Translate.Instance.Tr("cactus part");
-                    VialInfo targetHead = heads.Where(x => x.Animal != AnimalType.Cupcake).FirstOrDefault();
-                    if (targetHead == null)
+                    if (tails.Any())
                     {
-                        targetHead = heads[0];
-                    }
-                    var targetEnabl = targetHead.Animal switch
-                    {
-                        AnimalType.Cat => targetGoTorso.CatHead,
-                        AnimalType.Alien => targetGoTorso.AlienHead,
-                        AnimalType.Dino => targetGoTorso.DinoHead,
-                        AnimalType.Tentacles => targetGoTorso.Tentacles,
-                        _ => throw new System.NotImplementedException()
-                    };
-                    if (targetEnabl != null)
-                    {
-                        sentence = targetHead.Animal switch
+                        var targetTail = tails[0];
+                        (targetTail.Animal switch
+                        {
+                            AnimalType.Cat => targetGoTorso.CatTail,
+                            AnimalType.Alien => targetGoTorso.AlienTail,
+                            AnimalType.Dino => targetGoTorso.DinoTail,
+                            _ => throw new System.NotImplementedException()
+                        }).gameObject.SetActive(true);
+
+                        sentence += targetTail.Animal switch
                         {
                             AnimalType.Cat => Translate.Instance.Tr("cat three"),
                             AnimalType.Alien => Translate.Instance.Tr("alien three"),
                             AnimalType.Dino => Translate.Instance.Tr("dino three"),
-                            AnimalType.Tentacles => Translate.Instance.Tr("tentacles"),
                             _ => "???"
-                        } + sentence;
+                        };
+                    }
 
-                        targetEnabl.gameObject.SetActive(true);
-                        var targetGoHead = targetEnabl.GetComponent<Head>();
-                        if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Cupcake))
+                    if (heads.Any())
+                    {
+                        if (target.Animal == AnimalType.Cactus) sentence = Translate.Instance.Tr("cactus part");
+                        VialInfo targetHead = heads.Where(x => x.Animal != AnimalType.Cupcake).FirstOrDefault();
+                        if (targetHead == null)
                         {
-                            sentence = Translate.Instance.Tr("topping") + " " + sentence;
-                            targetGoHead.Topping.gameObject.SetActive(true);
+                            targetHead = heads[0];
                         }
-                        if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Fish))
+                        var targetEnabl = targetHead.Animal switch
                         {
-                            sentence = Translate.Instance.Tr("bowl") + " " + sentence;
-                            targetGoHead.Bowl.gameObject.SetActive(true);
+                            AnimalType.Cat => targetGoTorso.CatHead,
+                            AnimalType.Alien => targetGoTorso.AlienHead,
+                            AnimalType.Dino => targetGoTorso.DinoHead,
+                            AnimalType.Tentacles => targetGoTorso.Tentacles,
+                            _ => throw new System.NotImplementedException()
+                        };
+                        if (targetEnabl != null)
+                        {
+                            sentence = targetHead.Animal switch
+                            {
+                                AnimalType.Cat => Translate.Instance.Tr("cat three"),
+                                AnimalType.Alien => Translate.Instance.Tr("alien three"),
+                                AnimalType.Dino => Translate.Instance.Tr("dino three"),
+                                AnimalType.Tentacles => Translate.Instance.Tr("tentacles"),
+                                _ => "???"
+                            } + sentence;
+
+                            targetEnabl.gameObject.SetActive(true);
+                            var targetGoHead = targetEnabl.GetComponent<Head>();
+                            if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Cupcake))
+                            {
+                                sentence = Translate.Instance.Tr("topping") + " " + sentence;
+                                targetGoHead.Topping.gameObject.SetActive(true);
+                            }
+                            if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Fish))
+                            {
+                                sentence = Translate.Instance.Tr("bowl") + " " + sentence;
+                                targetGoHead.Bowl.gameObject.SetActive(true);
+                            }
                         }
                     }
+                    else if ((target.Animal == AnimalType.Cactus || target.Animal == AnimalType.Cupcake) && elems.Any(x => x.Animal == AnimalType.Cupcake && x.Type == ContentType.Hat))
+                    {
+                        sentence = Translate.Instance.Tr("topping") + " " + sentence;
+                        targetGoTorso.Topping.gameObject.SetActive(true);
+                    }
                 }
-                else if ((target.Animal == AnimalType.Cactus || target.Animal == AnimalType.Cupcake) && elems.Any(x => x.Animal == AnimalType.Cupcake && x.Type == ContentType.Hat))
+                else if (heads.Any())
                 {
-                    sentence = Translate.Instance.Tr("topping") + " " + sentence;
-                    targetGoTorso.Topping.gameObject.SetActive(true);
-                }
-            }
-            else if (heads.Any())
-            {
-                var targetHead = heads[0];
-                targetGo = Instantiate(targetHead.Prefab, _spawnPoint.position, Quaternion.identity);
-                var targetGoHead = targetGo.GetComponent<Head>();
-                sentence = targetHead.Animal switch
-                {
-                    AnimalType.Cat => Translate.Instance.Tr("cat three"),
-                    AnimalType.Alien => Translate.Instance.Tr("alien three"),
-                    AnimalType.Dino => Translate.Instance.Tr("dino three"),
-                    AnimalType.Tentacles => Translate.Instance.Tr("tentacles"),
-                    _ => "???"
-                };
-                if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Cupcake))
-                {
-                    sentence = Translate.Instance.Tr("topping") + " " + sentence;
-                    targetGoHead.Topping.gameObject.SetActive(true);
-                }
-                if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Fish))
-                {
-                    sentence = Translate.Instance.Tr("bowl") + " " + sentence;
-                    targetGoHead.Bowl.gameObject.SetActive(true);
+                    var targetHead = heads[0];
+                    targetGo = Instantiate(targetHead.Prefab, _spawnPoint.position, Quaternion.identity);
+                    var targetGoHead = targetGo.GetComponent<Head>();
+                    sentence = targetHead.Animal switch
+                    {
+                        AnimalType.Cat => Translate.Instance.Tr("cat three"),
+                        AnimalType.Alien => Translate.Instance.Tr("alien three"),
+                        AnimalType.Dino => Translate.Instance.Tr("dino three"),
+                        AnimalType.Tentacles => Translate.Instance.Tr("tentacles"),
+                        _ => "???"
+                    };
+                    if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Cupcake))
+                    {
+                        sentence = Translate.Instance.Tr("topping") + " " + sentence;
+                        targetGoHead.Topping.gameObject.SetActive(true);
+                    }
+                    if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Fish))
+                    {
+                        sentence = Translate.Instance.Tr("bowl") + " " + sentence;
+                        targetGoHead.Bowl.gameObject.SetActive(true);
+                    }
                 }
             }
 
             if (targetGo != null)
             {
+                if (others.Any(x => x.ID == "Green_glow"))
+                {
+                    sentence = Translate.Instance.Tr("green") + " " + sentence;
+                }
+                if (others.Any(x => x.ID == "Purple_glow"))
+                {
+                    sentence = Translate.Instance.Tr("purple") + " " + sentence;
+                }
+                if (others.Any(x => x.ID == "Slime"))
+                {
+                    sentence = Translate.Instance.Tr("slime") + " " + sentence;
+                }
+
                 targetGo.AddComponent<Rigidbody>();
                 targetGo.transform.Rotate(new Vector3(-90f, 0f, 0f));
                 targetGo.transform.localScale = Vector3.one * 2f;
+            }
+            else
+            {
+                _pcr.SetText(Translate.Instance.Tr("synthesis failed"));
             }
             _pcr.NextText = sentence;
         }
