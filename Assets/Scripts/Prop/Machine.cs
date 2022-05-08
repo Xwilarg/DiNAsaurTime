@@ -64,6 +64,7 @@ namespace GamedevGBG.Prop
                 {
                     _isBusy = true;
                 }
+                other.GetComponent<Rigidbody>().isKinematic = true;
                 Add(other.gameObject);
                 other.gameObject.transform.rotation = Quaternion.Euler(_storageRot);
             }
