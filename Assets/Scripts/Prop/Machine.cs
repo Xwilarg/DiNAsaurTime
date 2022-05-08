@@ -60,7 +60,6 @@ namespace GamedevGBG.Prop
             // Make sure that the object isn't already there and that there is empty space
             if (other.CompareTag("Draggable") && other.GetComponent<PropInfo>().CanBeUsed(_allowedType) && !_isBusy)
             {
-                Debug.Log("aze");
                 if (_timer > 0f)
                 {
                     _isBusy = true;

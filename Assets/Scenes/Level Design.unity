@@ -6846,11 +6846,6 @@ MonoBehaviour:
     Type: 4
     Animal: 7
     Prefab: {fileID: 0}
-  - ID: Pizza
-    Mat: {fileID: 2100000, guid: daba3be5a25f0384cb15d970b6dfc588, type: 2}
-    Type: 4
-    Animal: 7
-    Prefab: {fileID: 1603069461846591169, guid: 1938f7de86712744a82efce9d6079a8a, type: 3}
 --- !u!1001 &2139481484
 PrefabInstance:
   m_ObjectHideFlags: 0
