@@ -20,6 +20,19 @@ namespace GamedevGBG.Menu
             return Translate.Instance.Tr(text);
         }
 
+        private bool _isListeningToUpdates = false;
+
+        private void DisplayCredits()
+        {
+            _board.text =
+                $"{Tr("scientist and gamedesign")}: Paulo Gonçalves Teixeira\n" +
+                $"{Tr("3D artist")}: Jadith Nicole Bruzenak\n" +
+                $"{Tr("sound designer")}: kbrecordzz\n" +
+                $"{Tr("developer")}: Christian Chaux\n\n" +
+                $"{Tr("dutch translation")}: TheIndra\n" +
+                $"{Tr("spanish and german translation")}: Masaya-jkl";
+        }
+
         public void Process(string key)
         {
             if (key == "PLAY")
@@ -29,14 +42,16 @@ namespace GamedevGBG.Menu
             else if (key == "CREDITS")
             {
                 _board.fontSize = .3f;
-                _board.text =
-                    $"{Tr("scientist and gamedesign")}: Paulo Gonçalves Teixeira\n" +
-                    $"{Tr("3D artist")}: Jadith Nicole Bruzenak\n" +
-                    $"{Tr("sound designer")}: kbrecordzz\n" +
-                    $"{Tr("developer")}: Christian Chaux\n\n" +
-                    $"{Tr("dutch translation")}: TheIndra\n" +
-                    $"{Tr("spanish and german translation")}: Masaya-jkl";
+                DisplayCredits();
                 _pcr.SetText(Tr("thank you"));
+                if (!_isListeningToUpdates)
+                {
+                    _board.GetComponent<TMP_TextTranslate>().OnTextUpdate += (sender, e) =>
+                    {
+                        DisplayCredits();
+                    };
+                    _isListeningToUpdates = true;
+                }
             }
             else if (key == "ENGLISH")
             {
