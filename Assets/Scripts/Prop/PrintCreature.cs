@@ -13,9 +13,16 @@ namespace GamedevGBG.Prop
         [SerializeField]
         private Machine _pcr;
 
+        private GameObject _current;
+
         public void Print(string key)
         {
             Debug.Log($"Created {key}");
+
+            if (_current != null)
+            {
+                Destroy(_current);
+            }
 
             var elems = key.Split(';').Select(x => VialManager.Instance.GetByKey(x));
 
@@ -164,6 +171,8 @@ namespace GamedevGBG.Prop
                 targetGo.AddComponent<Rigidbody>();
                 targetGo.transform.Rotate(new Vector3(-90f, 0f, 0f));
                 targetGo.transform.localScale = Vector3.one * 2f;
+
+                _current = targetGo;
             }
             else
             {
