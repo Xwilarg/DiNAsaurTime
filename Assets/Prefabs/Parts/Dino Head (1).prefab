@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e796ea937850a44912c784a0d56307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topping: {fileID: 3687456424074574620}
-  Bowl: {fileID: 597377380}
+  Topping: {fileID: 597377380}
+  Bowl: {fileID: 3687456424074574620}
 --- !u!65 &584804116613156653
 BoxCollider:
   m_ObjectHideFlags: 0
