@@ -40,6 +40,8 @@ namespace GamedevGBG.Prop
 
         private float _timer = -1f;
 
+        public string NextText { private get; set; } = string.Empty;
+
         public override int TargetCount => _slots.Length;
 
         private void Start()
@@ -109,7 +111,7 @@ namespace GamedevGBG.Prop
         private IEnumerator CleanText()
         {
             yield return new WaitForSeconds(3f);
-            _progression.text = string.Empty;
+            _progression.text = NextText;
         }
 
         public override Vector3 GetPosition(int index)
