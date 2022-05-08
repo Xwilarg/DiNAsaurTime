@@ -142,25 +142,28 @@ namespace GamedevGBG.Prop
                 else if (heads.Any())
                 {
                     var targetHead = heads[0];
-                    targetGo = Instantiate(targetHead.Prefab, _spawnPoint.position, Quaternion.identity);
-                    var targetGoHead = targetGo.GetComponent<Head>();
-                    sentence = targetHead.Animal switch
+                    if (targetHead.Animal != AnimalType.Tentacles)
                     {
-                        AnimalType.Cat => Translate.Instance.Tr("cat three"),
-                        AnimalType.Alien => Translate.Instance.Tr("alien three"),
-                        AnimalType.Dino => Translate.Instance.Tr("dino three"),
-                        AnimalType.Tentacles => Translate.Instance.Tr("tentacles"),
-                        _ => "???"
-                    };
-                    if (hats.Any(x => x.Animal == AnimalType.Cupcake))
-                    {
-                        sentence = Translate.Instance.Tr("topping") + " " + sentence;
-                        targetGoHead.Topping.gameObject.SetActive(true);
-                    }
-                    if (hats.Any(x => x.Animal == AnimalType.Fish))
-                    {
-                        sentence = Translate.Instance.Tr("bowl") + " " + sentence;
-                        targetGoHead.Bowl.gameObject.SetActive(true);
+                        targetGo = Instantiate(targetHead.Prefab, _spawnPoint.position, Quaternion.identity);
+                        var targetGoHead = targetGo.GetComponent<Head>();
+                        sentence = targetHead.Animal switch
+                        {
+                            AnimalType.Cat => Translate.Instance.Tr("cat three"),
+                            AnimalType.Alien => Translate.Instance.Tr("alien three"),
+                            AnimalType.Dino => Translate.Instance.Tr("dino three"),
+                            AnimalType.Tentacles => Translate.Instance.Tr("tentacles"),
+                            _ => "???"
+                        };
+                        if (hats.Any(x => x.Animal == AnimalType.Cupcake))
+                        {
+                            sentence = Translate.Instance.Tr("topping") + " " + sentence;
+                            targetGoHead.Topping.gameObject.SetActive(true);
+                        }
+                        if (hats.Any(x => x.Animal == AnimalType.Fish))
+                        {
+                            sentence = Translate.Instance.Tr("bowl") + " " + sentence;
+                            targetGoHead.Bowl.gameObject.SetActive(true);
+                        }
                     }
                 }
             }
