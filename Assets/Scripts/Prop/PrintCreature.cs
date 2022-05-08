@@ -171,12 +171,14 @@ namespace GamedevGBG.Prop
                 {
                     sentence = Translate.Instance.Tr("lavender") + " " + sentence;
                     var light = targetGo.AddComponent<Light>();
+                    light.intensity = .2f;
                     light.color = new Color(.25f, .5f, .25f);
                 }
                 else if (others.Any(x => x.ID == "Green_glow"))
                 {
                     sentence = Translate.Instance.Tr("green") + " " + sentence;
                     var light = targetGo.AddComponent<Light>();
+                    light.intensity = .2f;
                     light.color = Color.green;
                 }
                 else if (others.Any(x => x.ID == "Purple_glow"))
