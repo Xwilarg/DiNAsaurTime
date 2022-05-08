@@ -114,7 +114,7 @@ namespace GamedevGBG.Prop
 
         private IEnumerator CleanText()
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
             _progression.text = NextText;
         }
 
