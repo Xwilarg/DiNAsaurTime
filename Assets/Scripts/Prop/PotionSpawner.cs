@@ -89,7 +89,10 @@ namespace GamedevGBG.Prop
         {
             yield return new WaitForSeconds(5f);
             var go = SpawnAndAdd(index);
-            go.GetComponent<PropInfo>().ID = _ids[index];
+            if (_ids.Any())
+            {
+                go.GetComponent<PropInfo>().ID = _ids[index];
+            }
         }
     }
 }
