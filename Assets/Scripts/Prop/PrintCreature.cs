@@ -15,8 +15,12 @@ namespace GamedevGBG.Prop
 
         private GameObject _current;
 
+        [SerializeField]
+        private GameObject[] _stickers;
+
         public void Print(string key)
         {
+            int reqSteps = 3;
             Debug.Log($"Created {key}");
 
             if (_current != null)
@@ -52,6 +56,10 @@ namespace GamedevGBG.Prop
                         targetGo = Instantiate(target.Prefab, _spawnPoint.position, Quaternion.identity);
                         var targetGoTorso = targetGo.GetComponent<Torso>();
 
+                        if (target.Animal == AnimalType.Dino)
+                        {
+                            reqSteps--;
+                        }
                         sentence = target.Animal switch
                         {
                             AnimalType.Cat => Translate.Instance.Tr("cat two"),
@@ -81,6 +89,10 @@ namespace GamedevGBG.Prop
                                 AnimalType.Dino => Translate.Instance.Tr("dino three"),
                                 _ => "???"
                             };
+                            if (targetTail.Animal == AnimalType.Dino)
+                            {
+                                reqSteps--;
+                            }
                         }
 
                         if (heads.Any())
@@ -100,6 +112,10 @@ namespace GamedevGBG.Prop
                                 AnimalType.Tentacles => targetGoTorso.Tentacles,
                                 _ => throw new System.NotImplementedException()
                             };
+                            if (targetHead.Animal == AnimalType.Dino)
+                            {
+                                reqSteps--;
+                            }
                             if (targetEnabl != null)
                             {
                                 sentence = targetHead.Animal switch
@@ -210,6 +226,14 @@ namespace GamedevGBG.Prop
                 targetGo.transform.localPosition = Vector3.zero;
 
                 _current = targetGo;
+
+                if (reqSteps == 0)
+                {
+                    foreach (var go in _stickers)
+                    {
+                        go.SetActive(true);
+                    }
+                }
             }
             else
             {
