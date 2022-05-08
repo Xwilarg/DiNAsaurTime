@@ -132,6 +132,7 @@ namespace GamedevGBG.Prop
         {
             base.Add(go);
             DragAndDrop.Instance.Drop();
+            DragAndDrop.Instance.PlayPop();
             if (!_targets.Any(x => x == null) && _processOnDone) // All emplacement full
             {
                 _anim.SetBool("IsOpen", false);

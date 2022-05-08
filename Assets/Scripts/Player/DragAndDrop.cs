@@ -82,6 +82,10 @@ namespace GamedevGBG.Player
         public void Drop()
         {
             _dragTarget = null;
+        }
+
+        public void PlayPop()
+        {
             _source.PlayOneShot(_drop);
         }
     }
