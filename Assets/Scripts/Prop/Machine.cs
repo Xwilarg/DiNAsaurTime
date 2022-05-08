@@ -54,11 +54,13 @@ namespace GamedevGBG.Prop
             Init();
         }
 
+        private bool _isBusy = false;
         private void OnTriggerEnter(Collider other)
         {
             // Make sure that the object isn't already there and that there is empty space
-            if (other.CompareTag("Draggable") && other.GetComponent<PropInfo>().CanBeUsed(_allowedType))
+            if (other.CompareTag("Draggable") && other.GetComponent<PropInfo>().CanBeUsed(_allowedType) && !_isBusy)
             {
+                _isBusy = true;
                 Add(other.gameObject);
                 other.gameObject.transform.rotation = Quaternion.Euler(_storageRot);
             }
@@ -87,6 +89,7 @@ namespace GamedevGBG.Prop
                 }
                 if (_timer <= 0f)
                 {
+                    _isBusy = false;
                     _anim.SetBool("IsOpen", true);
                     _source.Stop();
                     if (_source != null && _onDone != null)
