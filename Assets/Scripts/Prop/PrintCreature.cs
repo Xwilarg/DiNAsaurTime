@@ -181,6 +181,7 @@ namespace GamedevGBG.Prop
                 targetGo.AddComponent<Rigidbody>();
                 targetGo.transform.Rotate(new Vector3(-90f, 0f, 0f));
                 targetGo.transform.localScale = Vector3.one * 2f;
+                targetGo.transform.parent = _spawnPoint.transform;
 
                 _current = targetGo;
             }
@@ -189,6 +190,11 @@ namespace GamedevGBG.Prop
                 _pcr.SetText(Translate.Instance.Tr("synthesis failed"));
             }
             _pcr.NextText = sentence;
+        }
+
+        private void Update()
+        {
+            _spawnPoint.Rotate(new Vector3(0f, 0f, Time.deltaTime));
         }
     }
 }
