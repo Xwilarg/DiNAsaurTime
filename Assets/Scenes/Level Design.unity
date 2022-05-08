@@ -6054,6 +6054,10 @@ PrefabInstance:
       propertyPath: _prefab
       value: 
       objectReference: {fileID: 2973287825761642359, guid: 10732b19642c6a844bd2abecfeebbfe3, type: 3}
+    - target: {fileID: 1844576416, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
+      propertyPath: _baseSpawnCount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149135725058, guid: e1a19ec2200a582489b1578fc82cd1ab, type: 3}
       propertyPath: _speed
       value: 0.3
