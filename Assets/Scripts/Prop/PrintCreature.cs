@@ -29,6 +29,7 @@ namespace GamedevGBG.Prop
             var torsos = elems.Where(x => x.Type == ContentType.Body).ToArray();
             var heads = elems.Where(x => x.Type == ContentType.Head).ToArray();
             var tails = elems.Where(x => x.Type == ContentType.Tail).ToArray();
+            var hats = elems.Where(x => x.Type == ContentType.Hat).ToArray();
             var others = elems.Where(x => x.Type == ContentType.Other).ToArray();
 
             string sentence = "";
@@ -109,12 +110,12 @@ namespace GamedevGBG.Prop
 
                             targetEnabl.gameObject.SetActive(true);
                             var targetGoHead = targetEnabl.GetComponent<Head>();
-                            if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Cupcake))
+                            if (hats.Any(x => x.Animal == AnimalType.Cupcake))
                             {
                                 sentence = Translate.Instance.Tr("topping") + " " + sentence;
                                 targetGoHead.Topping.gameObject.SetActive(true);
                             }
-                            if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Fish))
+                            if (hats.Any(x => x.Animal == AnimalType.Fish))
                             {
                                 sentence = Translate.Instance.Tr("bowl") + " " + sentence;
                                 targetGoHead.Bowl.gameObject.SetActive(true);
@@ -140,12 +141,12 @@ namespace GamedevGBG.Prop
                         AnimalType.Tentacles => Translate.Instance.Tr("tentacles"),
                         _ => "???"
                     };
-                    if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Cupcake))
+                    if (hats.Any(x => x.Animal == AnimalType.Cupcake))
                     {
                         sentence = Translate.Instance.Tr("topping") + " " + sentence;
                         targetGoHead.Topping.gameObject.SetActive(true);
                     }
-                    if (others.Any(x => x.Type == ContentType.Hat && x.Animal == AnimalType.Fish))
+                    if (hats.Any(x => x.Animal == AnimalType.Fish))
                     {
                         sentence = Translate.Instance.Tr("bowl") + " " + sentence;
                         targetGoHead.Bowl.gameObject.SetActive(true);
