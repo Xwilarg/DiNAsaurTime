@@ -37,6 +37,7 @@ namespace GamedevGBG.Prop
                 if (torsos.Any())
                 {
                     var target = torsos[0];
+                    Debug.Log($"Torso found: {target.ID}");
                     targetGo = Instantiate(target.Prefab, _spawnPoint.position, Quaternion.identity);
                     var targetGoTorso = targetGo.GetComponent<Torso>();
 
@@ -53,6 +54,7 @@ namespace GamedevGBG.Prop
                     if (tails.Any())
                     {
                         var targetTail = tails[0];
+                        Debug.Log($"Tail found: {targetTail.ID}");
                         (targetTail.Animal switch
                         {
                             AnimalType.Cat => targetGoTorso.CatTail,
@@ -74,6 +76,7 @@ namespace GamedevGBG.Prop
                     {
                         if (target.Animal == AnimalType.Cactus) sentence = Translate.Instance.Tr("cactus part");
                         VialInfo targetHead = heads.Where(x => x.Animal != AnimalType.Cupcake).FirstOrDefault();
+                        Debug.Log($"Head found: {targetHead.ID}");
                         if (targetHead == null)
                         {
                             targetHead = heads[0];
