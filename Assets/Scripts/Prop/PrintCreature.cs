@@ -155,7 +155,15 @@ namespace GamedevGBG.Prop
 
             if (targetGo != null)
             {
-                if (others.Any(x => x.ID == "Green_glow"))
+                if (others.Any(x => x.ID == "Green_glow") && others.Any(x => x.ID == "Purple_glow"))
+                {
+                    sentence = Translate.Instance.Tr("lavender") + " " + sentence;
+                    var light = targetGo.AddComponent<Light>();
+                    light.color = new Color(.45f, .95f, .5f);
+                    var halo = light.GetComponent("Halo");
+                    halo.GetType().GetProperty("enabled").SetValue(halo, true, null);
+                }
+                else if (others.Any(x => x.ID == "Green_glow"))
                 {
                     sentence = Translate.Instance.Tr("green") + " " + sentence;
                     var light = targetGo.AddComponent<Light>();
@@ -163,7 +171,7 @@ namespace GamedevGBG.Prop
                     var halo = light.GetComponent("Halo");
                     halo.GetType().GetProperty("enabled").SetValue(halo, true, null);
                 }
-                if (others.Any(x => x.ID == "Purple_glow"))
+                else if (others.Any(x => x.ID == "Purple_glow"))
                 {
                     sentence = Translate.Instance.Tr("purple") + " " + sentence;
                     var light = targetGo.AddComponent<Light>();
