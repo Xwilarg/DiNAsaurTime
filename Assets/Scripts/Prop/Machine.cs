@@ -57,7 +57,7 @@ namespace GamedevGBG.Prop
         private void OnTriggerEnter(Collider other)
         {
             // Make sure that the object isn't already there and that there is empty space
-            if (other.CompareTag("Draggable") && other.GetComponent<PropInfo>().Type == _allowedType)
+            if (other.CompareTag("Draggable") && other.GetComponent<PropInfo>().CanBeUsed(_allowedType))
             {
                 Add(other.gameObject);
                 other.gameObject.transform.rotation = Quaternion.Euler(_storageRot);
