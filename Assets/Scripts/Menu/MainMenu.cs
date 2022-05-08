@@ -1,4 +1,5 @@
-﻿using GamedevGBG.Translation;
+﻿using GamedevGBG.Prop;
+using GamedevGBG.Translation;
 using System;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,9 @@ namespace GamedevGBG.Menu
     {
         [SerializeField]
         private TMP_Text _board;
+
+        [SerializeField]
+        private Machine _pcr;
 
         private string Tr(string text)
         {
@@ -32,26 +36,32 @@ namespace GamedevGBG.Menu
                     $"{Tr("developer")}: Christian Chaux\n\n" +
                     $"{Tr("dutch translation")}: TheIndra\n" +
                     $"{Tr("spanish and german translation")}: Masaya-jkl";
+                _pcr.SetText(Tr("thank you"));
             }
             else if (key == "ENGLISH")
             {
                 Translate.Instance.CurrentLanguage = "english";
+                _pcr.SetText(Tr("customText"));
             }
             else if (key == "FRENCH")
             {
                 Translate.Instance.CurrentLanguage = "french";
+                _pcr.SetText(Tr("customText"));
             }
             else if (key == "SPANISH")
             {
                 Translate.Instance.CurrentLanguage = "spanish";
+                _pcr.SetText(Tr("customText"));
             }
             else if (key == "DUTCH")
             {
                 Translate.Instance.CurrentLanguage = "dutch";
+                _pcr.SetText(Tr("customText"));
             }
             else if (key == "GERMAN")
             {
                 Translate.Instance.CurrentLanguage = "german";
+                _pcr.SetText(Tr("customText"));
             }
             else if (key == "SECRET")
             {
